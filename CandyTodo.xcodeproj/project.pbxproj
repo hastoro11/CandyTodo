@@ -97,8 +97,12 @@
 		8CF5E8AE228A8D98007BF40A /* CandyTodo */ = {
 			isa = PBXGroup;
 			children = (
+				8CF5E8E1228A8E3F007BF40A /* Config */,
+				8CF5E8E0228A8E37007BF40A /* Utils */,
+				8CF5E8DF228A8E30007BF40A /* Model */,
+				8CF5E8DE228A8E25007BF40A /* View */,
+				8CF5E8DD228A8E1B007BF40A /* Controller */,
 				8CF5E8AF228A8D99007BF40A /* AppDelegate.swift */,
-				8CF5E8B1228A8D99007BF40A /* ViewController.swift */,
 				8CF5E8B3228A8D99007BF40A /* Main.storyboard */,
 				8CF5E8B6228A8D9A007BF40A /* Assets.xcassets */,
 				8CF5E8B8228A8D9A007BF40A /* LaunchScreen.storyboard */,
@@ -123,6 +127,42 @@
 				8CF5E8D1228A8D9A007BF40A /* Info.plist */,
 			);
 			path = CandyTodoUITests;
+			sourceTree = "<group>";
+		};
+		8CF5E8DD228A8E1B007BF40A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8CF5E8B1228A8D99007BF40A /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8CF5E8DE228A8E25007BF40A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8CF5E8DF228A8E30007BF40A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8CF5E8E0228A8E37007BF40A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		8CF5E8E1228A8E3F007BF40A /* Config */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
