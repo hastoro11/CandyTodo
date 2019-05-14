@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C235931228B0C9D00DE4C7C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C235930228B0C9D00DE4C7C /* RegisterViewController.swift */; };
 		8CF5E8B0228A8D99007BF40A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF5E8AF228A8D99007BF40A /* AppDelegate.swift */; };
 		8CF5E8B5228A8D99007BF40A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CF5E8B3228A8D99007BF40A /* Main.storyboard */; };
 		8CF5E8B7228A8D9A007BF40A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CF5E8B6228A8D9A007BF40A /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8C235930228B0C9D00DE4C7C /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		8CF5E8AC228A8D98007BF40A /* CandyTodo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CandyTodo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CF5E8AF228A8D99007BF40A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CF5E8B4228A8D99007BF40A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				8CF5E8E4228A9942007BF40A /* LoginViewController.swift */,
+				8C235930228B0C9D00DE4C7C /* RegisterViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CF5E8E5228A9942007BF40A /* LoginViewController.swift in Sources */,
+				8C235931228B0C9D00DE4C7C /* RegisterViewController.swift in Sources */,
 				8CF5E8EA228AA3EE007BF40A /* TitleLabel.swift in Sources */,
 				8CF5E8B0228A8D99007BF40A /* AppDelegate.swift in Sources */,
 				8CF5E8E3228A8F59007BF40A /* Constants.swift in Sources */,
