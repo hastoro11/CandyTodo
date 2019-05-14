@@ -14,6 +14,7 @@
 		8CF5E8BA228A8D9A007BF40A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CF5E8B8228A8D9A007BF40A /* LaunchScreen.storyboard */; };
 		8CF5E8C5228A8D9A007BF40A /* CandyTodoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF5E8C4228A8D9A007BF40A /* CandyTodoTests.swift */; };
 		8CF5E8D0228A8D9A007BF40A /* CandyTodoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF5E8CF228A8D9A007BF40A /* CandyTodoUITests.swift */; };
+		8CF5E8E3228A8F59007BF40A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF5E8E2228A8F59007BF40A /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		8CF5E8CB228A8D9A007BF40A /* CandyTodoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CandyTodoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CF5E8CF228A8D9A007BF40A /* CandyTodoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandyTodoUITests.swift; sourceTree = "<group>"; };
 		8CF5E8D1228A8D9A007BF40A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CF5E8E2228A8F59007BF40A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 		8CF5E8E0228A8E37007BF40A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				8CF5E8E2228A8F59007BF40A /* Constants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 			files = (
 				8CF5E8B2228A8D99007BF40A /* ViewController.swift in Sources */,
 				8CF5E8B0228A8D99007BF40A /* AppDelegate.swift in Sources */,
+				8CF5E8E3228A8F59007BF40A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
