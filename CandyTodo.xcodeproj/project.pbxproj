@@ -7,14 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C235931228B0C9D00DE4C7C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C235930228B0C9D00DE4C7C /* RegisterViewController.swift */; };
 		8CF5E8B0228A8D99007BF40A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF5E8AF228A8D99007BF40A /* AppDelegate.swift */; };
-		8CF5E8B2228A8D99007BF40A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF5E8B1228A8D99007BF40A /* ViewController.swift */; };
 		8CF5E8B5228A8D99007BF40A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CF5E8B3228A8D99007BF40A /* Main.storyboard */; };
 		8CF5E8B7228A8D9A007BF40A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CF5E8B6228A8D9A007BF40A /* Assets.xcassets */; };
 		8CF5E8BA228A8D9A007BF40A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CF5E8B8228A8D9A007BF40A /* LaunchScreen.storyboard */; };
 		8CF5E8C5228A8D9A007BF40A /* CandyTodoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF5E8C4228A8D9A007BF40A /* CandyTodoTests.swift */; };
 		8CF5E8D0228A8D9A007BF40A /* CandyTodoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF5E8CF228A8D9A007BF40A /* CandyTodoUITests.swift */; };
 		8CF5E8E3228A8F59007BF40A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF5E8E2228A8F59007BF40A /* Constants.swift */; };
+		8CF5E8E5228A9942007BF40A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF5E8E4228A9942007BF40A /* LoginViewController.swift */; };
+		8CF5E8EA228AA3EE007BF40A /* TitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF5E8E9228AA3EE007BF40A /* TitleLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8C235930228B0C9D00DE4C7C /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		8CF5E8AC228A8D98007BF40A /* CandyTodo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CandyTodo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CF5E8AF228A8D99007BF40A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8CF5E8B1228A8D99007BF40A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8CF5E8B4228A8D99007BF40A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8CF5E8B6228A8D9A007BF40A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8CF5E8B9228A8D9A007BF40A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +51,8 @@
 		8CF5E8CF228A8D9A007BF40A /* CandyTodoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandyTodoUITests.swift; sourceTree = "<group>"; };
 		8CF5E8D1228A8D9A007BF40A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CF5E8E2228A8F59007BF40A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8CF5E8E4228A9942007BF40A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		8CF5E8E9228AA3EE007BF40A /* TitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,7 @@
 		8CF5E8AE228A8D98007BF40A /* CandyTodo */ = {
 			isa = PBXGroup;
 			children = (
+				8CF5E8E6228A9964007BF40A /* Components */,
 				8CF5E8E1228A8E3F007BF40A /* Config */,
 				8CF5E8E0228A8E37007BF40A /* Utils */,
 				8CF5E8DF228A8E30007BF40A /* Model */,
@@ -134,7 +139,8 @@
 		8CF5E8DD228A8E1B007BF40A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				8CF5E8B1228A8D99007BF40A /* ViewController.swift */,
+				8CF5E8E4228A9942007BF40A /* LoginViewController.swift */,
+				8C235930228B0C9D00DE4C7C /* RegisterViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -166,6 +172,14 @@
 			children = (
 			);
 			path = Config;
+			sourceTree = "<group>";
+		};
+		8CF5E8E6228A9964007BF40A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				8CF5E8E9228AA3EE007BF40A /* TitleLabel.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,7 +313,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CF5E8B2228A8D99007BF40A /* ViewController.swift in Sources */,
+				8CF5E8E5228A9942007BF40A /* LoginViewController.swift in Sources */,
+				8C235931228B0C9D00DE4C7C /* RegisterViewController.swift in Sources */,
+				8CF5E8EA228AA3EE007BF40A /* TitleLabel.swift in Sources */,
 				8CF5E8B0228A8D99007BF40A /* AppDelegate.swift in Sources */,
 				8CF5E8E3228A8F59007BF40A /* Constants.swift in Sources */,
 			);
