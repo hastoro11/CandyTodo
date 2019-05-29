@@ -10,9 +10,8 @@ import UIKit
 
 class MainViewController: UITabBarController {
     
-    var addButton: UIButton = {
-        let btn = UIButton()
-        btn.setImage(UIImage(named: "add"), for: .normal)
+    var addButton: AddButton = {
+        let btn = AddButton()
         return btn
     }()
 
@@ -33,11 +32,16 @@ class MainViewController: UITabBarController {
         
         // Scheduler Controller
         guard let schedulerVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SchedulerVC") as? SchedulerVC else {return}
-        schedulerVC.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "clock"), tag: 1)
+        let schedulerTabBarItem = UITabBarItem(title: "", image: UIImage(named: "clock"), tag: 1)
+        schedulerTabBarItem.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 40)
+        schedulerVC.tabBarItem = schedulerTabBarItem
+        
         
         // Notifications controller
         guard let notifocationsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NotificationsVC") as? NotificationsVC else {return}
-        notifocationsVC.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "bell"), tag: 2)
+        let notificationsTabBarItem = UITabBarItem(title: "", image: UIImage(named: "bell"), tag: 1)
+        notificationsTabBarItem.imageInsets = UIEdgeInsets(top: 0, left: 40, bottom: 0, right: 0)
+        notifocationsVC.tabBarItem = notificationsTabBarItem
         
         // Profile controller
         guard let profileVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProfileVC") as? ProfileVC else {return}

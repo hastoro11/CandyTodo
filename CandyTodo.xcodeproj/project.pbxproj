@@ -14,6 +14,7 @@
 		8C28D1F8229EDC7D0042D1C5 /* SchedulerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C28D1F7229EDC7D0042D1C5 /* SchedulerVC.swift */; };
 		8C28D1FB229F1C1A0042D1C5 /* NotificationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C28D1FA229F1C1A0042D1C5 /* NotificationsVC.swift */; };
 		8C28D1FE229F1E2A0042D1C5 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C28D1FD229F1E2A0042D1C5 /* ProfileVC.swift */; };
+		8C28D200229F30F50042D1C5 /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C28D1FF229F30F50042D1C5 /* AddButton.swift */; };
 		8CF5E8B0228A8D99007BF40A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF5E8AF228A8D99007BF40A /* AppDelegate.swift */; };
 		8CF5E8B5228A8D99007BF40A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CF5E8B3228A8D99007BF40A /* Main.storyboard */; };
 		8CF5E8B7228A8D9A007BF40A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CF5E8B6228A8D9A007BF40A /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 		8C28D1F7229EDC7D0042D1C5 /* SchedulerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulerVC.swift; sourceTree = "<group>"; };
 		8C28D1FA229F1C1A0042D1C5 /* NotificationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsVC.swift; sourceTree = "<group>"; };
 		8C28D1FD229F1E2A0042D1C5 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		8C28D1FF229F30F50042D1C5 /* AddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
 		8CF5E8AC228A8D98007BF40A /* CandyTodo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CandyTodo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CF5E8AF228A8D99007BF40A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CF5E8B4228A8D99007BF40A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				8C28D1D6229ECF600042D1C5 /* HeaderView.swift */,
+				8C28D1FF229F30F50042D1C5 /* AddButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 				8C28D1D3229EB7B40042D1C5 /* ListVC.swift in Sources */,
 				8C28D1FB229F1C1A0042D1C5 /* NotificationsVC.swift in Sources */,
 				8CF5E8E5228A9942007BF40A /* LoginViewController.swift in Sources */,
+				8C28D200229F30F50042D1C5 /* AddButton.swift in Sources */,
 				8C235931228B0C9D00DE4C7C /* RegisterViewController.swift in Sources */,
 				8CF5E8EA228AA3EE007BF40A /* TitleLabel.swift in Sources */,
 				8C28D1BF229EACE80042D1C5 /* MainViewController.swift in Sources */,
