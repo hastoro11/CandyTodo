@@ -17,6 +17,7 @@
 		8C28D200229F30F50042D1C5 /* MiddleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C28D1FF229F30F50042D1C5 /* MiddleButton.swift */; };
 		8C28D202229FAE9B0042D1C5 /* NewTaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C28D201229FAE9B0042D1C5 /* NewTaskVC.swift */; };
 		8C28D204229FB06E0042D1C5 /* TaskTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C28D203229FB06E0042D1C5 /* TaskTextField.swift */; };
+		8C28D206229FB4B40042D1C5 /* EnterTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C28D205229FB4B40042D1C5 /* EnterTextField.swift */; };
 		8CF5E8B0228A8D99007BF40A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF5E8AF228A8D99007BF40A /* AppDelegate.swift */; };
 		8CF5E8B5228A8D99007BF40A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CF5E8B3228A8D99007BF40A /* Main.storyboard */; };
 		8CF5E8B7228A8D9A007BF40A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CF5E8B6228A8D9A007BF40A /* Assets.xcassets */; };
@@ -56,6 +57,7 @@
 		8C28D1FF229F30F50042D1C5 /* MiddleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiddleButton.swift; sourceTree = "<group>"; };
 		8C28D201229FAE9B0042D1C5 /* NewTaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskVC.swift; sourceTree = "<group>"; };
 		8C28D203229FB06E0042D1C5 /* TaskTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTextField.swift; sourceTree = "<group>"; };
+		8C28D205229FB4B40042D1C5 /* EnterTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterTextField.swift; sourceTree = "<group>"; };
 		8CF5E8AC228A8D98007BF40A /* CandyTodo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CandyTodo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CF5E8AF228A8D99007BF40A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CF5E8B4228A8D99007BF40A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				8C28D1D6229ECF600042D1C5 /* HeaderView.swift */,
 				8C28D1FF229F30F50042D1C5 /* MiddleButton.swift */,
 				8C28D203229FB06E0042D1C5 /* TaskTextField.swift */,
+				8C28D205229FB4B40042D1C5 /* EnterTextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				8C235931228B0C9D00DE4C7C /* RegisterViewController.swift in Sources */,
 				8CF5E8EA228AA3EE007BF40A /* TitleLabel.swift in Sources */,
 				8C28D1BF229EACE80042D1C5 /* MainViewController.swift in Sources */,
+				8C28D206229FB4B40042D1C5 /* EnterTextField.swift in Sources */,
 				8C28D1F8229EDC7D0042D1C5 /* SchedulerVC.swift in Sources */,
 				8CF5E8B0228A8D99007BF40A /* AppDelegate.swift in Sources */,
 				8CF5E8E3228A8F59007BF40A /* Constants.swift in Sources */,
