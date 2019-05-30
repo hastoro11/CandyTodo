@@ -8,11 +8,10 @@
 
 import UIKit
 
-class AddButton: UIButton {
+class MiddleButton: UIButton {
 
     override init(frame: CGRect) {
-        super.init(frame: frame)
-        self.setImage(UIImage(named: "add"), for: .normal)
+        super.init(frame: frame)        
     }
     
     required init?(coder aDecoder: NSCoder) {

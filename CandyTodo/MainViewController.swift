@@ -10,8 +10,10 @@ import UIKit
 
 class MainViewController: UITabBarController {
     
-    var addButton: AddButton = {
-        let btn = AddButton()
+    var addButton: MiddleButton = {
+        let btn = MiddleButton()
+        btn.setImage(UIImage(named: "add"), for: .normal)
+        btn.addTarget(self, action: #selector(addButtonTapped), for: .touchUpInside)
         return btn
     }()
 
@@ -54,6 +56,11 @@ class MainViewController: UITabBarController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         addButton.frame = CGRect(x: (view.bounds.width - 80) / 2, y: view.bounds.height - 40 - 72, width: 80, height: 72)
+    }
+    
+    @objc func addButtonTapped() {
+        guard let newTaskVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewTaskVC") as? NewTaskVC else {return}
+        present(newTaskVC, animated: true, completion: nil)
     }
 
 }
