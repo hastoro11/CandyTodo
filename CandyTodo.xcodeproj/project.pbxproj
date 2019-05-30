@@ -18,6 +18,7 @@
 		8C28D202229FAE9B0042D1C5 /* NewTaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C28D201229FAE9B0042D1C5 /* NewTaskVC.swift */; };
 		8C28D204229FB06E0042D1C5 /* TaskTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C28D203229FB06E0042D1C5 /* TaskTextField.swift */; };
 		8C28D206229FB4B40042D1C5 /* EnterTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C28D205229FB4B40042D1C5 /* EnterTextField.swift */; };
+		8C28D20822A03FD70042D1C5 /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C28D20722A03FD70042D1C5 /* EditProfileVC.swift */; };
 		8CF5E8B0228A8D99007BF40A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF5E8AF228A8D99007BF40A /* AppDelegate.swift */; };
 		8CF5E8B5228A8D99007BF40A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CF5E8B3228A8D99007BF40A /* Main.storyboard */; };
 		8CF5E8B7228A8D9A007BF40A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CF5E8B6228A8D9A007BF40A /* Assets.xcassets */; };
@@ -58,6 +59,7 @@
 		8C28D201229FAE9B0042D1C5 /* NewTaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskVC.swift; sourceTree = "<group>"; };
 		8C28D203229FB06E0042D1C5 /* TaskTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTextField.swift; sourceTree = "<group>"; };
 		8C28D205229FB4B40042D1C5 /* EnterTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterTextField.swift; sourceTree = "<group>"; };
+		8C28D20722A03FD70042D1C5 /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
 		8CF5E8AC228A8D98007BF40A /* CandyTodo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CandyTodo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CF5E8AF228A8D99007BF40A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CF5E8B4228A8D99007BF40A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 		8C28D1FC229F1E130042D1C5 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				8C28D20722A03FD70042D1C5 /* EditProfileVC.swift */,
 				8C28D1FD229F1E2A0042D1C5 /* ProfileVC.swift */,
 			);
 			path = Profile;
@@ -383,6 +386,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C28D20822A03FD70042D1C5 /* EditProfileVC.swift in Sources */,
 				8C28D204229FB06E0042D1C5 /* TaskTextField.swift in Sources */,
 				8C28D1D3229EB7B40042D1C5 /* ListVC.swift in Sources */,
 				8C28D1FB229F1C1A0042D1C5 /* NotificationsVC.swift in Sources */,
