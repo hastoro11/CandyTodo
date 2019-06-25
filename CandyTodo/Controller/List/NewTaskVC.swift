@@ -42,6 +42,7 @@ class NewTaskVC: UIViewController {
         taskTextField.delegate = self
         //Datepicker
         datePicker.backgroundColor = .white
+        datePicker.minuteInterval = 15
         datePicker.addTarget(self, action: #selector(dateSelected), for: .valueChanged)
         //DateTextField
         dateTextField.delegate = self
