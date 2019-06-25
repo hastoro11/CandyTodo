@@ -35,4 +35,9 @@ class EnterTextField: UITextField {
         let insets = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         return self.bounds.inset(by: insets)
     }
+    
+    override func textRect(forBounds bounds: CGRect) -> CGRect {
+        let insets = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+        return bounds.inset(by: insets)
+    }
 }
