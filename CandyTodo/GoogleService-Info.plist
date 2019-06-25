@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>485439461916-e96v9s0ldr19iushk6uq27co8ikdtjvv.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.485439461916-e96v9s0ldr19iushk6uq27co8ikdtjvv</string>
+	<key>API_KEY</key>
+	<string>AIzaSyB78GWEjQYNPax-JrgX0rZ-bJKdVTrFHz0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>485439461916</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.sornyei.CandyTodo</string>
+	<key>PROJECT_ID</key>
+	<string>candytodo-ae1d0</string>
+	<key>STORAGE_BUCKET</key>
+	<string>candytodo-ae1d0.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:485439461916:ios:d61aa764573a552b</string>
+	<key>DATABASE_URL</key>
+	<string>https://candytodo-ae1d0.firebaseio.com</string>
+</dict>
+</plist>
