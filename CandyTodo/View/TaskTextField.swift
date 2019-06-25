@@ -29,4 +29,9 @@ class TaskTextField: UITextField {
         let insets = UIEdgeInsets(top: 0, left: 32, bottom: 0, right: 32)
         return bounds.inset(by: insets)
     }
+    
+    override func textRect(forBounds bounds: CGRect) -> CGRect {
+        let insets = UIEdgeInsets(top: 0, left: 32, bottom: 0, right: 32)
+        return bounds.inset(by: insets)
+    }
 }
