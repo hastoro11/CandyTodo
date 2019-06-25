@@ -1,3 +1,4 @@
 CandyTodo/Config/
 Pods/
 Podfile.lock
+CandyTodo/GoogleService-Info.plist
