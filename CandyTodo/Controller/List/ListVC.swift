@@ -7,18 +7,19 @@
 //
 
 import UIKit
+import Firebase
 
 class ListVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        myView.layer.shadowPath = UIBezierPath(rect: myView.bounds).cgPath
-//        myView.layer.shadowRadius = 5
-//        myView.layer.shadowOffset = .zero
-//        myView.layer.shadowOpacity = 1
     }
-    
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        try? Auth.auth().signOut()
+    }
 
     /*
     // MARK: - Navigation

@@ -24,6 +24,7 @@
 		8C28D20822A03FD70042D1C5 /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C28D20722A03FD70042D1C5 /* EditProfileVC.swift */; };
 		8CEAA74622C22ECC00BF2445 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8CEAA74522C22ECC00BF2445 /* GoogleService-Info.plist */; };
 		8CEAA74922C2A88300BF2445 /* Firestore+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEAA74822C2A88300BF2445 /* Firestore+Ext.swift */; };
+		8CEAA74B22C2C98300BF2445 /* NoBorderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEAA74A22C2C98300BF2445 /* NoBorderTextField.swift */; };
 		8CF5E8B0228A8D99007BF40A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF5E8AF228A8D99007BF40A /* AppDelegate.swift */; };
 		8CF5E8B5228A8D99007BF40A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CF5E8B3228A8D99007BF40A /* Main.storyboard */; };
 		8CF5E8B7228A8D9A007BF40A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CF5E8B6228A8D9A007BF40A /* Assets.xcassets */; };
@@ -75,6 +76,7 @@
 		8C28D20722A03FD70042D1C5 /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
 		8CEAA74522C22ECC00BF2445 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8CEAA74822C2A88300BF2445 /* Firestore+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firestore+Ext.swift"; sourceTree = "<group>"; };
+		8CEAA74A22C2C98300BF2445 /* NoBorderTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoBorderTextField.swift; sourceTree = "<group>"; };
 		8CF5E8AC228A8D98007BF40A /* CandyTodo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CandyTodo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CF5E8AF228A8D99007BF40A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CF5E8B4228A8D99007BF40A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -292,6 +294,7 @@
 				8C28D203229FB06E0042D1C5 /* TaskTextField.swift */,
 				8C28D205229FB4B40042D1C5 /* EnterTextField.swift */,
 				8C28D1FF229F30F50042D1C5 /* MiddleButton.swift */,
+				8CEAA74A22C2C98300BF2445 /* NoBorderTextField.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -541,6 +544,7 @@
 				8C235931228B0C9D00DE4C7C /* RegisterViewController.swift in Sources */,
 				8CF5E8EA228AA3EE007BF40A /* TitleLabel.swift in Sources */,
 				8C28D1BF229EACE80042D1C5 /* MainViewController.swift in Sources */,
+				8CEAA74B22C2C98300BF2445 /* NoBorderTextField.swift in Sources */,
 				8C28D206229FB4B40042D1C5 /* EnterTextField.swift in Sources */,
 				8C28D1F8229EDC7D0042D1C5 /* SchedulerVC.swift in Sources */,
 				8CF5E8B0228A8D99007BF40A /* AppDelegate.swift in Sources */,
