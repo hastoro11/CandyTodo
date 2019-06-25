@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class RegisterViewController: UIViewController {
     
@@ -17,6 +18,8 @@ class RegisterViewController: UIViewController {
             loginButton.setAttributedTitle(attributedTitle, for: .normal)
         }
     }
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     
     @IBOutlet weak var termsAndConditionsTextView: UITextView! {
         didSet {            
@@ -55,15 +58,23 @@ class RegisterViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func registerButtonTapped() {
+        guard let email = emailTextField.text, !email.isEmpty else {return}
+        guard let password = passwordTextField.text, !password.isEmpty else {return}
+        
+        Firestore.registerNewUser(email: email, password: password) {[unowned self] (success, error) in
+            if let error = error {
+                print("Error in registering:", error)
+                return
+            }
+            if !success {
+                print("Error in registering")
+                return
+            }
+            
+            let window = self.view.window
+            window?.rootViewController = MainViewController()            
+        }
     }
-    */
 
 }
