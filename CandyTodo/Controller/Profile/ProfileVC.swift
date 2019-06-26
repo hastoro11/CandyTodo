@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ProfileVC: UIViewController {
     
@@ -17,10 +18,28 @@ class ProfileVC: UIViewController {
             profileImageView.layer.masksToBounds = true
         }
     }
+    @IBOutlet weak var usernameLabel: UILabel! {
+        didSet {
+            usernameLabel.text = ""
+        }
+    }
+    @IBOutlet weak var emailLabel: UILabel! {
+        didSet {
+            emailLabel.text = ""
+        }
+    }
+    
+    //MARK: - vars
+    var user: User? {
+        didSet {
+            configure()
+        }
+    }
 
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchUser()
     }
     
     //MARK: - Actions
@@ -32,5 +51,21 @@ class ProfileVC: UIViewController {
     
     @IBAction func menuButtonTapped() {
         NotificationCenter.default.post(name: Notification.Name(kMENU_BUTTON_TAPPED), object: nil)
+    }
+    
+    //MARK: - helpers
+    func configure() {
+        usernameLabel.text = user?.username
+        emailLabel.text = user?.email
+    }
+    
+    func fetchUser() {
+        Firestore.getCurrentUser {[unowned self] (user, error) in
+            if let error = error {
+                print("Error fetching user:", error)
+                return
+            }
+            self.user = user
+        }
     }
 }

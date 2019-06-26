@@ -781,7 +781,9 @@
                         <viewLayoutGuide key="safeArea" id="09n-uq-BZa"/>
                     </view>
                     <connections>
+                        <outlet property="emailLabel" destination="ing-Lz-XAG" id="u2p-HN-fK9"/>
                         <outlet property="profileImageView" destination="xZ5-lf-n04" id="dsh-3b-gVy"/>
+                        <outlet property="usernameLabel" destination="JRt-fk-3sd" id="fCk-iR-jFM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="haz-gG-8MA" userLabel="First Responder" sceneMemberID="firstResponder"/>

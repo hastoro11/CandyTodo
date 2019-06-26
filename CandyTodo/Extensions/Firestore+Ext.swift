@@ -17,14 +17,15 @@ extension Firestore {
                 completion(false, error)
                 return
             }
-            let values = ["email": email, "password": password]
-            Firestore.firestore().collection("users").addDocument(data: values, completion: { (error) in
+            guard let uid = result?.user.uid else {return}
+            let values = ["email": email]
+            Firestore.firestore().collection("users").document(uid).setData(values, completion: { (error) in
                 if let error = error {
                     completion(false, error)
                     return
                 }
                 completion(true, nil)
-            })
+            })               
         }
     }
     // Login
@@ -35,6 +36,20 @@ extension Firestore {
                 return
             }
             completion(true, nil)
+        }
+    }
+    
+    // Get user
+    static func getCurrentUser(completion: @escaping (User?, Error?) -> Void) {
+        guard let currentUser = Auth.auth().currentUser else {return}
+        Firestore.firestore().collection("users").document(currentUser.uid).getDocument { (snapshot, error) in
+            if let error = error {
+                completion(nil, error)
+                return
+            }
+            guard let dictionary = snapshot?.data() else {return}
+            let user = User(from: dictionary)
+            completion(user, nil)
         }
     }
 }
