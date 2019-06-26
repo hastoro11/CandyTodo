@@ -8,17 +8,53 @@
 
 import UIKit
 import Firebase
+import SDWebImage
 
 class MenuController: UIViewController {
+    
+    //MARK: - Outlets
+    @IBOutlet weak var usernameLabel: UILabel! {
+        didSet {
+            usernameLabel.text = ""
+        }
+    }
+    @IBOutlet weak var profileImageView: UIImageView!
+    
+    //MARK: - vars
+    var user: User? {
+        didSet {
+            configure()
+        }
+    }
+    
 
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchUser()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
+    }
+    
+    //MARK: - helpers
+    func configure() {
+        usernameLabel.text = user?.username
+        guard let profileImageURL = user?.profileImageURL else {return}
+        profileImageView.sd_setImage(with: URL(string: profileImageURL), placeholderImage: nil, options: [SDWebImageOptions.continueInBackground, .progressiveLoad], context: nil)
+
+    }
+    
+    func fetchUser() {
+        Firestore.getCurrentUser {[unowned self] (user, error) in
+            if let error = error {
+                print("Error fetching user:", error)
+                return
+            }
+            self.user = user
+        }
     }
 
     //MARK: - Actions

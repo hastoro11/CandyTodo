@@ -7,7 +7,25 @@
 		<key>CandyTodo.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>22</integer>
+			<integer>23</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>8CF5E8AB228A8D98007BF40A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8CF5E8BF228A8D9A007BF40A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8CF5E8CA228A8D9A007BF40A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

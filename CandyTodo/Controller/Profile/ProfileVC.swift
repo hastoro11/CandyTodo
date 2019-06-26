@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SDWebImage
 
 class ProfileVC: UIViewController {
     
@@ -57,6 +58,8 @@ class ProfileVC: UIViewController {
     func configure() {
         usernameLabel.text = user?.username
         emailLabel.text = user?.email
+        guard let profileImageURL = user?.profileImageURL else {return}
+        profileImageView.sd_setImage(with: URL(string: profileImageURL), placeholderImage: nil, options: [SDWebImageOptions.continueInBackground, .progressiveLoad], context: nil)
     }
     
     func fetchUser() {
