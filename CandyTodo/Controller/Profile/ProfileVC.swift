@@ -20,7 +20,7 @@ class ProfileVC: UIViewController {
 
     //MARK: - Lifecycle
     override func viewDidLoad() {
-        super.viewDidLoad()     
+        super.viewDidLoad()
     }
     
     //MARK: - Actions
@@ -28,5 +28,9 @@ class ProfileVC: UIViewController {
         if let editProfileVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "EditProfileVC") as? EditProfileVC {
             self.present(editProfileVC, animated: true, completion: nil)
         }
+    }
+    
+    @IBAction func menuButtonTapped() {
+        NotificationCenter.default.post(name: Notification.Name(kMENU_BUTTON_TAPPED), object: nil)
     }
 }

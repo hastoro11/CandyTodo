@@ -11,6 +11,8 @@ import Firebase
 
 class ListVC: UIViewController {
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,17 +20,13 @@ class ListVC: UIViewController {
 
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        try? Auth.auth().signOut()
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    //MARK: - Actions
+    @IBAction func menuButtonTapped() {
+        NotificationCenter.default.post(name: Notification.Name(kMENU_BUTTON_TAPPED), object: nil)
     }
-    */
+    
 
 }

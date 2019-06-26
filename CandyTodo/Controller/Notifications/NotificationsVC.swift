@@ -10,7 +10,13 @@ import UIKit
 
 class NotificationsVC: UIViewController {
 
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    //MARK: - Actions
+    @IBAction func menuButtonTapped() {
+        NotificationCenter.default.post(name: Notification.Name(kMENU_BUTTON_TAPPED), object: nil)
     }
 }
