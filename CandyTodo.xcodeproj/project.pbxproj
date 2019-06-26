@@ -25,6 +25,7 @@
 		8CEAA74622C22ECC00BF2445 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8CEAA74522C22ECC00BF2445 /* GoogleService-Info.plist */; };
 		8CEAA74922C2A88300BF2445 /* Firestore+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEAA74822C2A88300BF2445 /* Firestore+Ext.swift */; };
 		8CEAA74B22C2C98300BF2445 /* NoBorderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEAA74A22C2C98300BF2445 /* NoBorderTextField.swift */; };
+		8CEAA77122C3906F00BF2445 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEAA77022C3906F00BF2445 /* MenuController.swift */; };
 		8CF5E8B0228A8D99007BF40A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF5E8AF228A8D99007BF40A /* AppDelegate.swift */; };
 		8CF5E8B5228A8D99007BF40A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CF5E8B3228A8D99007BF40A /* Main.storyboard */; };
 		8CF5E8B7228A8D9A007BF40A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CF5E8B6228A8D9A007BF40A /* Assets.xcassets */; };
@@ -77,6 +78,7 @@
 		8CEAA74522C22ECC00BF2445 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8CEAA74822C2A88300BF2445 /* Firestore+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firestore+Ext.swift"; sourceTree = "<group>"; };
 		8CEAA74A22C2C98300BF2445 /* NoBorderTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoBorderTextField.swift; sourceTree = "<group>"; };
+		8CEAA77022C3906F00BF2445 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		8CF5E8AC228A8D98007BF40A /* CandyTodo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CandyTodo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CF5E8AF228A8D99007BF40A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CF5E8B4228A8D99007BF40A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -216,7 +218,6 @@
 				8CF5E8DF228A8E30007BF40A /* Model */,
 				8CF5E8DE228A8E25007BF40A /* View */,
 				8CF5E8DD228A8E1B007BF40A /* Controller */,
-				8C28D1BE229EACE80042D1C5 /* MainViewController.swift */,
 				8CF5E8AF228A8D99007BF40A /* AppDelegate.swift */,
 				8CF5E8B3228A8D99007BF40A /* Main.storyboard */,
 				8CF5E8B6228A8D9A007BF40A /* Assets.xcassets */,
@@ -248,6 +249,8 @@
 		8CF5E8DD228A8E1B007BF40A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				8CEAA77022C3906F00BF2445 /* MenuController.swift */,
+				8C28D1BE229EACE80042D1C5 /* MainViewController.swift */,
 				8C28D1C0229EACFD0042D1C5 /* Login */,
 				8C28D1C3229EAD890042D1C5 /* List */,
 				8C28D1F6229EDC4A0042D1C5 /* Schedule */,
@@ -538,6 +541,7 @@
 				8C28D20822A03FD70042D1C5 /* EditProfileVC.swift in Sources */,
 				8C28D204229FB06E0042D1C5 /* TaskTextField.swift in Sources */,
 				8C28D1D3229EB7B40042D1C5 /* ListVC.swift in Sources */,
+				8CEAA77122C3906F00BF2445 /* MenuController.swift in Sources */,
 				8C28D1FB229F1C1A0042D1C5 /* NotificationsVC.swift in Sources */,
 				8CF5E8E5228A9942007BF40A /* LoginViewController.swift in Sources */,
 				8C28D200229F30F50042D1C5 /* MiddleButton.swift in Sources */,

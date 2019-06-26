@@ -8,6 +8,7 @@ target 'CandyTodo' do
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
   pod 'Firebase/Storage'
+  pod 'SideMenu'
   # Pods for CandyTodo
 
   target 'CandyTodoTests' do
