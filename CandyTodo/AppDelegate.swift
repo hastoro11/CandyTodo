@@ -18,8 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
-        let rootController = MainViewController()
-        window?.rootViewController = rootController
+        
+        if Auth.auth().currentUser != nil {
+            window?.rootViewController = MainViewController()
+        } else {
+            if let loginViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
+                window?.rootViewController = UINavigationController(rootViewController: loginViewController)
+            }
+        }
         window?.makeKeyAndVisible()
         return true
     }

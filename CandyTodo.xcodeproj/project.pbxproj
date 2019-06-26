@@ -10,7 +10,6 @@
 		29046C78DD057775ADDB9FB8 /* Pods_CandyTodoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44E011F49A50FC1D5F793375 /* Pods_CandyTodoTests.framework */; };
 		2EB77BF2D1F3D78073E868FF /* Pods_CandyTodo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 417E1ABC710CBE0D13B4152B /* Pods_CandyTodo.framework */; };
 		56BC0890A9C689E521F0DCA8 /* Pods_CandyTodoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CD9E76388A24AC6B9CADF34 /* Pods_CandyTodoUITests.framework */; };
-		8C1792A322C22711002A5C64 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C1792A222C22711002A5C64 /* GoogleService-Info.plist */; };
 		8C235931228B0C9D00DE4C7C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C235930228B0C9D00DE4C7C /* RegisterViewController.swift */; };
 		8C28D1BF229EACE80042D1C5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C28D1BE229EACE80042D1C5 /* MainViewController.swift */; };
 		8C28D1D3229EB7B40042D1C5 /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C28D1D2229EB7B40042D1C5 /* ListVC.swift */; };
@@ -23,6 +22,9 @@
 		8C28D204229FB06E0042D1C5 /* TaskTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C28D203229FB06E0042D1C5 /* TaskTextField.swift */; };
 		8C28D206229FB4B40042D1C5 /* EnterTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C28D205229FB4B40042D1C5 /* EnterTextField.swift */; };
 		8C28D20822A03FD70042D1C5 /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C28D20722A03FD70042D1C5 /* EditProfileVC.swift */; };
+		8CEAA74622C22ECC00BF2445 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8CEAA74522C22ECC00BF2445 /* GoogleService-Info.plist */; };
+		8CEAA74922C2A88300BF2445 /* Firestore+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEAA74822C2A88300BF2445 /* Firestore+Ext.swift */; };
+		8CEAA74B22C2C98300BF2445 /* NoBorderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEAA74A22C2C98300BF2445 /* NoBorderTextField.swift */; };
 		8CF5E8B0228A8D99007BF40A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF5E8AF228A8D99007BF40A /* AppDelegate.swift */; };
 		8CF5E8B5228A8D99007BF40A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CF5E8B3228A8D99007BF40A /* Main.storyboard */; };
 		8CF5E8B7228A8D9A007BF40A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CF5E8B6228A8D9A007BF40A /* Assets.xcassets */; };
@@ -60,7 +62,6 @@
 		44E011F49A50FC1D5F793375 /* Pods_CandyTodoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CandyTodoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BA5A92F191EA5E906AB810C /* Pods-CandyTodoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CandyTodoUITests.release.xcconfig"; path = "Target Support Files/Pods-CandyTodoUITests/Pods-CandyTodoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		856FEC8B9AC44A5FBF32B7DF /* Pods-CandyTodo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CandyTodo.debug.xcconfig"; path = "Target Support Files/Pods-CandyTodo/Pods-CandyTodo.debug.xcconfig"; sourceTree = "<group>"; };
-		8C1792A222C22711002A5C64 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8C235930228B0C9D00DE4C7C /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		8C28D1BE229EACE80042D1C5 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		8C28D1D2229EB7B40042D1C5 /* ListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; };
@@ -73,6 +74,9 @@
 		8C28D203229FB06E0042D1C5 /* TaskTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTextField.swift; sourceTree = "<group>"; };
 		8C28D205229FB4B40042D1C5 /* EnterTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterTextField.swift; sourceTree = "<group>"; };
 		8C28D20722A03FD70042D1C5 /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
+		8CEAA74522C22ECC00BF2445 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8CEAA74822C2A88300BF2445 /* Firestore+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firestore+Ext.swift"; sourceTree = "<group>"; };
+		8CEAA74A22C2C98300BF2445 /* NoBorderTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoBorderTextField.swift; sourceTree = "<group>"; };
 		8CF5E8AC228A8D98007BF40A /* CandyTodo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CandyTodo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CF5E8AF228A8D99007BF40A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CF5E8B4228A8D99007BF40A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -172,6 +176,14 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		8CEAA74722C2A86C00BF2445 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8CEAA74822C2A88300BF2445 /* Firestore+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		8CF5E8A3228A8D98007BF40A = {
 			isa = PBXGroup;
 			children = (
@@ -197,6 +209,7 @@
 		8CF5E8AE228A8D98007BF40A /* CandyTodo */ = {
 			isa = PBXGroup;
 			children = (
+				8CEAA74722C2A86C00BF2445 /* Extensions */,
 				8CF5E8E6228A9964007BF40A /* Components */,
 				8CF5E8E1228A8E3F007BF40A /* Config */,
 				8CF5E8E0228A8E37007BF40A /* Utils */,
@@ -208,7 +221,7 @@
 				8CF5E8B3228A8D99007BF40A /* Main.storyboard */,
 				8CF5E8B6228A8D9A007BF40A /* Assets.xcassets */,
 				8CF5E8B8228A8D9A007BF40A /* LaunchScreen.storyboard */,
-				8C1792A222C22711002A5C64 /* GoogleService-Info.plist */,
+				8CEAA74522C22ECC00BF2445 /* GoogleService-Info.plist */,
 				8CF5E8BB228A8D9A007BF40A /* Info.plist */,
 			);
 			path = CandyTodo;
@@ -248,9 +261,6 @@
 			isa = PBXGroup;
 			children = (
 				8C28D1D6229ECF600042D1C5 /* HeaderView.swift */,
-				8C28D1FF229F30F50042D1C5 /* MiddleButton.swift */,
-				8C28D203229FB06E0042D1C5 /* TaskTextField.swift */,
-				8C28D205229FB4B40042D1C5 /* EnterTextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -281,6 +291,10 @@
 			isa = PBXGroup;
 			children = (
 				8CF5E8E9228AA3EE007BF40A /* TitleLabel.swift */,
+				8C28D203229FB06E0042D1C5 /* TaskTextField.swift */,
+				8C28D205229FB4B40042D1C5 /* EnterTextField.swift */,
+				8C28D1FF229F30F50042D1C5 /* MiddleButton.swift */,
+				8CEAA74A22C2C98300BF2445 /* NoBorderTextField.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -409,7 +423,7 @@
 				8CF5E8BA228A8D9A007BF40A /* LaunchScreen.storyboard in Resources */,
 				8CF5E8B7228A8D9A007BF40A /* Assets.xcassets in Resources */,
 				8CF5E8B5228A8D99007BF40A /* Main.storyboard in Resources */,
-				8C1792A322C22711002A5C64 /* GoogleService-Info.plist in Resources */,
+				8CEAA74622C22ECC00BF2445 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,6 +534,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CEAA74922C2A88300BF2445 /* Firestore+Ext.swift in Sources */,
 				8C28D20822A03FD70042D1C5 /* EditProfileVC.swift in Sources */,
 				8C28D204229FB06E0042D1C5 /* TaskTextField.swift in Sources */,
 				8C28D1D3229EB7B40042D1C5 /* ListVC.swift in Sources */,
@@ -529,6 +544,7 @@
 				8C235931228B0C9D00DE4C7C /* RegisterViewController.swift in Sources */,
 				8CF5E8EA228AA3EE007BF40A /* TitleLabel.swift in Sources */,
 				8C28D1BF229EACE80042D1C5 /* MainViewController.swift in Sources */,
+				8CEAA74B22C2C98300BF2445 /* NoBorderTextField.swift in Sources */,
 				8C28D206229FB4B40042D1C5 /* EnterTextField.swift in Sources */,
 				8C28D1F8229EDC7D0042D1C5 /* SchedulerVC.swift in Sources */,
 				8CF5E8B0228A8D99007BF40A /* AppDelegate.swift in Sources */,
