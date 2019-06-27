@@ -18,7 +18,14 @@ class MenuController: UIViewController {
             usernameLabel.text = ""
         }
     }
-    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var profileImageView: UIImageView! {
+        didSet {
+            profileImageView.layer.cornerRadius = profileImageView.bounds.width / 2
+            profileImageView.layer.masksToBounds = true
+            profileImageView.layer.borderWidth = 1
+            profileImageView.layer.borderColor = kBASEBLUE_COLOR.cgColor
+        }
+    }
     
     //MARK: - vars
     var user: User? {
@@ -31,6 +38,7 @@ class MenuController: UIViewController {
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(handleUserSavedNotification), name: NSNotification.Name(kUSER_SAVED_NOTIFICATION), object: nil)  
         fetchUser()
     }
     
@@ -43,7 +51,7 @@ class MenuController: UIViewController {
     func configure() {
         usernameLabel.text = user?.username
         guard let profileImageURL = user?.profileImageURL else {return}
-        profileImageView.sd_setImage(with: URL(string: profileImageURL), placeholderImage: nil, options: [SDWebImageOptions.continueInBackground, .progressiveLoad], context: nil)
+        profileImageView.sd_setImage(with: URL(string: profileImageURL), placeholderImage: UIImage(named: "avatar"), options: [SDWebImageOptions.continueInBackground, .progressiveLoad], context: nil)
 
     }
     
@@ -77,5 +85,11 @@ class MenuController: UIViewController {
         }
         
     }
+    
+    //MARK: - Selectors
+    @objc func handleUserSavedNotification() {
+        fetchUser()
+    }
+
 
 }

@@ -17,6 +17,8 @@ class ProfileVC: UIViewController {
         didSet {
             profileImageView.layer.cornerRadius = profileImageView.bounds.width / 2
             profileImageView.layer.masksToBounds = true
+            profileImageView.layer.borderWidth = 2
+            profileImageView.layer.borderColor = kBASEBLUE_COLOR.cgColor
         }
     }
     @IBOutlet weak var usernameLabel: UILabel! {
@@ -40,12 +42,14 @@ class ProfileVC: UIViewController {
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(handleUserSavedNotification), name: NSNotification.Name(kUSER_SAVED_NOTIFICATION), object: nil)        
         fetchUser()
     }
     
     //MARK: - Actions
     @IBAction func editButtonTapped() {
         if let editProfileVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "EditProfileVC") as? EditProfileVC {
+            editProfileVC.user = user
             self.present(editProfileVC, animated: true, completion: nil)
         }
     }
@@ -59,7 +63,7 @@ class ProfileVC: UIViewController {
         usernameLabel.text = user?.username
         emailLabel.text = user?.email
         guard let profileImageURL = user?.profileImageURL else {return}
-        profileImageView.sd_setImage(with: URL(string: profileImageURL), placeholderImage: nil, options: [SDWebImageOptions.continueInBackground, .progressiveLoad], context: nil)
+        profileImageView.sd_setImage(with: URL(string: profileImageURL), placeholderImage: UIImage(named: "avatar"), options: [SDWebImageOptions.continueInBackground, .progressiveLoad], context: nil)
     }
     
     func fetchUser() {
@@ -70,5 +74,10 @@ class ProfileVC: UIViewController {
             }
             self.user = user
         }
+    }
+    
+    //MARK: - Selectors
+    @objc func handleUserSavedNotification() {
+        fetchUser()
     }
 }

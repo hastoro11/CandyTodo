@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class NewTaskVC: UIViewController {
     
@@ -81,11 +82,19 @@ class NewTaskVC: UIViewController {
     
     //MARK: - Selectors
     @objc func addButtonTapped() {
+        taskTextField.endEditing(true)
+        guard let userId = Auth.auth().currentUser?.uid else {return}
         if enteredTask.isEmpty || selectedPriority.isEmpty {
-            print("Invalid")
+            print("Error: Invalid")
             return
         }
-        print("OK")
+        let taskDictionary = ["title": enteredTask, "priority": selectedPriority, "dueDate": selectedDate.timeIntervalSince1970] as [String: Any]
+        Firestore.saveTask(userId: userId, task: Task.init(from: taskDictionary)) {[unowned self] (success) in
+            if !success {
+                print("Error")
+            }
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     @objc func dateSelected(sender: UIDatePicker) {

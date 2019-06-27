@@ -18,7 +18,7 @@ extension Firestore {
                 return
             }
             guard let uid = result?.user.uid else {return}
-            let values = ["email": email]
+            let values = ["email": email, "uid": uid]
             Firestore.firestore().collection("users").document(uid).setData(values, completion: { (error) in
                 if let error = error {
                     completion(false, error)
@@ -50,6 +50,33 @@ extension Firestore {
             guard let dictionary = snapshot?.data() else {return}
             let user = User(from: dictionary)
             completion(user, nil)
+        }
+    }
+    
+    // Save user
+    static func saveUser(user: User, completion: @escaping(Bool) -> Void) {
+        let userRef = Firestore.firestore().collection("users").document(user.uid)
+        userRef.setData(user.createDictionary()) { (error) in
+            if let error = error {
+                print("Error updating user:", error)
+                completion(false)
+                return
+            }
+            completion(true)
+        }
+    }
+    
+    // Save task
+    static func saveTask(userId: String, task: Task, completion: @escaping(Bool) -> Void) {
+        let taskRef = Firestore.firestore().collection("users").document(userId).collection("tasks").document()
+        task.uid = taskRef.documentID
+        taskRef.setData(task.createDictionary()) { (error) in
+            if let error = error {
+                print("Error in saving task:", error)
+                completion(false)
+                return
+            }
+            completion(true)
         }
     }
 }

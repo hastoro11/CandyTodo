@@ -22,6 +22,8 @@
 		8C28D206229FB4B40042D1C5 /* EnterTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C28D205229FB4B40042D1C5 /* EnterTextField.swift */; };
 		8C28D20822A03FD70042D1C5 /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C28D20722A03FD70042D1C5 /* EditProfileVC.swift */; };
 		8C2A884022C3EF3A00873486 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2A883F22C3EF3A00873486 /* User.swift */; };
+		8C2A884222C4F7DF00873486 /* Storage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2A884122C4F7DF00873486 /* Storage+Ext.swift */; };
+		8C2A884422C52A3D00873486 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2A884322C52A3D00873486 /* Task.swift */; };
 		8CEAA74622C22ECC00BF2445 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8CEAA74522C22ECC00BF2445 /* GoogleService-Info.plist */; };
 		8CEAA74922C2A88300BF2445 /* Firestore+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEAA74822C2A88300BF2445 /* Firestore+Ext.swift */; };
 		8CEAA74B22C2C98300BF2445 /* NoBorderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEAA74A22C2C98300BF2445 /* NoBorderTextField.swift */; };
@@ -75,6 +77,8 @@
 		8C28D205229FB4B40042D1C5 /* EnterTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterTextField.swift; sourceTree = "<group>"; };
 		8C28D20722A03FD70042D1C5 /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
 		8C2A883F22C3EF3A00873486 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8C2A884122C4F7DF00873486 /* Storage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storage+Ext.swift"; sourceTree = "<group>"; };
+		8C2A884322C52A3D00873486 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		8CEAA74522C22ECC00BF2445 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8CEAA74822C2A88300BF2445 /* Firestore+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firestore+Ext.swift"; sourceTree = "<group>"; };
 		8CEAA74A22C2C98300BF2445 /* NoBorderTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoBorderTextField.swift; sourceTree = "<group>"; };
@@ -184,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				8CEAA74822C2A88300BF2445 /* Firestore+Ext.swift */,
+				8C2A884122C4F7DF00873486 /* Storage+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -274,6 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				8C2A883F22C3EF3A00873486 /* User.swift */,
+				8C2A884322C52A3D00873486 /* Task.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -544,6 +550,7 @@
 				8C28D20822A03FD70042D1C5 /* EditProfileVC.swift in Sources */,
 				8C28D204229FB06E0042D1C5 /* TaskTextField.swift in Sources */,
 				8C28D1D3229EB7B40042D1C5 /* ListVC.swift in Sources */,
+				8C2A884422C52A3D00873486 /* Task.swift in Sources */,
 				8CEAA77122C3906F00BF2445 /* MenuController.swift in Sources */,
 				8C28D1FB229F1C1A0042D1C5 /* NotificationsVC.swift in Sources */,
 				8CF5E8E5228A9942007BF40A /* LoginViewController.swift in Sources */,
@@ -558,6 +565,7 @@
 				8CF5E8B0228A8D99007BF40A /* AppDelegate.swift in Sources */,
 				8CF5E8E3228A8F59007BF40A /* Constants.swift in Sources */,
 				8C28D202229FAE9B0042D1C5 /* NewTaskVC.swift in Sources */,
+				8C2A884222C4F7DF00873486 /* Storage+Ext.swift in Sources */,
 				8C28D1FE229F1E2A0042D1C5 /* ProfileVC.swift in Sources */,
 				8C28D1D7229ECF600042D1C5 /* HeaderView.swift in Sources */,
 			);
