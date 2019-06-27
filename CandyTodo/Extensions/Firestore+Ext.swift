@@ -65,4 +65,18 @@ extension Firestore {
             completion(true)
         }
     }
+    
+    // Save task
+    static func saveTask(userId: String, task: Task, completion: @escaping(Bool) -> Void) {
+        let taskRef = Firestore.firestore().collection("users").document(userId).collection("tasks").document()
+        task.uid = taskRef.documentID
+        taskRef.setData(task.createDictionary()) { (error) in
+            if let error = error {
+                print("Error in saving task:", error)
+                completion(false)
+                return
+            }
+            completion(true)
+        }
+    }
 }
