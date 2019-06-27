@@ -662,7 +662,7 @@
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xZ5-lf-n04">
                                                 <rect key="frame" x="32" y="18" width="56" height="56"/>
-                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" red="0.14117647059999999" green="0.23137254900000001" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="56" id="Koq-sN-eDR"/>
                                                     <constraint firstAttribute="height" constant="56" id="OCk-Nj-pNx"/>
@@ -811,7 +811,7 @@
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="inI-mG-djS">
                                 <rect key="frame" x="32" y="74" width="40" height="40"/>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.14117647059999999" green="0.23137254900000001" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="kDD-ci-eEj"/>
                                     <constraint firstAttribute="width" constant="40" id="lfJ-Bu-mKc"/>
@@ -1221,7 +1221,7 @@
                                 <color key="textColor" red="0.14117647059999999" green="0.23137254900000001" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="john.doe@email.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xc3-EX-IUc" customClass="EnterTextField" customModule="CandyTodo" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="john.doe@email.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xc3-EX-IUc" customClass="EnterTextField" customModule="CandyTodo" customModuleProvider="target">
                                 <rect key="frame" x="52" y="264" width="310" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -1232,6 +1232,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rbm-Ms-63A">
+                                <rect key="frame" x="117" y="434" width="180" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="2eQ-yg-FK4"/>
+                                    <constraint firstAttribute="height" constant="180" id="I7X-5n-24z"/>
+                                </constraints>
+                                <color key="tintColor" red="0.14117647059999999" green="0.23137254900000001" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -1240,13 +1248,17 @@
                             <constraint firstItem="qbl-Mv-BO1" firstAttribute="leading" secondItem="xc3-EX-IUc" secondAttribute="leading" id="MJ4-Ia-m7q"/>
                             <constraint firstItem="qce-mj-ART" firstAttribute="top" secondItem="dco-mf-eZd" secondAttribute="top" id="RwI-RM-8ul"/>
                             <constraint firstItem="qbl-Mv-BO1" firstAttribute="top" secondItem="qce-mj-ART" secondAttribute="bottom" constant="16" id="X3y-RG-Xag"/>
+                            <constraint firstItem="Rbm-Ms-63A" firstAttribute="top" secondItem="xc3-EX-IUc" secondAttribute="bottom" constant="120" id="ZYI-A6-fMb"/>
                             <constraint firstItem="qce-mj-ART" firstAttribute="trailing" secondItem="HnH-pQ-kUb" secondAttribute="trailing" id="nby-D0-EoC"/>
                             <constraint firstItem="qce-mj-ART" firstAttribute="leading" secondItem="HnH-pQ-kUb" secondAttribute="leading" id="ogD-QX-eKr"/>
                             <constraint firstItem="xc3-EX-IUc" firstAttribute="centerX" secondItem="dco-mf-eZd" secondAttribute="centerX" id="q3B-Ec-XNy"/>
+                            <constraint firstItem="Rbm-Ms-63A" firstAttribute="centerX" secondItem="dco-mf-eZd" secondAttribute="centerX" id="uer-7s-8Np"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HnH-pQ-kUb"/>
                     </view>
                     <connections>
+                        <outlet property="addPhotoButton" destination="Rbm-Ms-63A" id="MvW-a0-Sar"/>
+                        <outlet property="emailTextField" destination="xc3-EX-IUc" id="rGy-oY-Zyu"/>
                         <outlet property="nameTextField" destination="Wz5-pv-tJQ" id="aCp-Fu-BwX"/>
                     </connections>
                 </viewController>
