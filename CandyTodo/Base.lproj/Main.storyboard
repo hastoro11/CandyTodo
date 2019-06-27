@@ -767,20 +767,55 @@
                                     <constraint firstItem="du9-mT-k91" firstAttribute="top" secondItem="vnJ-ab-2DN" secondAttribute="top" id="uYM-nn-geR"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VDK-3p-Az4">
-                                <rect key="frame" x="0.0" y="220" width="414" height="676"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notification Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1d-C9-ScM">
+                                <rect key="frame" x="32" y="236" width="350" height="19.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                <color key="textColor" red="0.14117647059999999" green="0.23137254900000001" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="3kK-RI-6Ao">
+                                <rect key="frame" x="32" y="287.5" width="350" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DyX-3p-fLF">
+                                        <rect key="frame" x="0.0" y="0.0" width="297" height="31"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                        <color key="textColor" red="0.14117647059999999" green="0.23137254900000001" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6eP-fU-XI0">
+                                        <rect key="frame" x="301" y="0.0" width="51" height="31"/>
+                                    </switch>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="uG2-W6-WrV">
+                                <rect key="frame" x="32" y="350.5" width="350" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Receive Summary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="daW-ZW-3pl">
+                                        <rect key="frame" x="0.0" y="0.0" width="297" height="31"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                        <color key="textColor" red="0.14117647059999999" green="0.23137254900000001" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q0X-Sg-1cf">
+                                        <rect key="frame" x="301" y="0.0" width="51" height="31"/>
+                                    </switch>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="VDK-3p-Az4" firstAttribute="trailing" secondItem="09n-uq-BZa" secondAttribute="trailing" id="7zP-Mg-MXw"/>
+                            <constraint firstItem="09n-uq-BZa" firstAttribute="trailing" secondItem="p1d-C9-ScM" secondAttribute="trailing" constant="32" id="5r5-eg-yur"/>
                             <constraint firstItem="vnJ-ab-2DN" firstAttribute="top" secondItem="qMh-fC-Mlq" secondAttribute="top" id="8fa-dS-OI3"/>
-                            <constraint firstItem="VDK-3p-Az4" firstAttribute="top" secondItem="vnJ-ab-2DN" secondAttribute="bottom" id="Ew5-F9-jaQ"/>
+                            <constraint firstItem="uG2-W6-WrV" firstAttribute="top" secondItem="3kK-RI-6Ao" secondAttribute="bottom" constant="32" id="9ul-Ot-CAg"/>
+                            <constraint firstItem="3kK-RI-6Ao" firstAttribute="top" secondItem="p1d-C9-ScM" secondAttribute="bottom" constant="32" id="Aif-bu-7Ah"/>
+                            <constraint firstItem="09n-uq-BZa" firstAttribute="trailing" secondItem="uG2-W6-WrV" secondAttribute="trailing" constant="32" id="Ckm-1D-a1q"/>
+                            <constraint firstItem="3kK-RI-6Ao" firstAttribute="leading" secondItem="09n-uq-BZa" secondAttribute="leading" constant="32" id="DJn-Td-PVy"/>
                             <constraint firstItem="vnJ-ab-2DN" firstAttribute="trailing" secondItem="09n-uq-BZa" secondAttribute="trailing" id="HjL-0s-Nq0"/>
-                            <constraint firstItem="VDK-3p-Az4" firstAttribute="leading" secondItem="09n-uq-BZa" secondAttribute="leading" id="JLG-XF-rSa"/>
+                            <constraint firstItem="p1d-C9-ScM" firstAttribute="leading" secondItem="09n-uq-BZa" secondAttribute="leading" constant="32" id="Ngr-9b-UNF"/>
+                            <constraint firstItem="09n-uq-BZa" firstAttribute="trailing" secondItem="3kK-RI-6Ao" secondAttribute="trailing" constant="32" id="Ocl-7i-GUM"/>
+                            <constraint firstItem="uG2-W6-WrV" firstAttribute="leading" secondItem="09n-uq-BZa" secondAttribute="leading" constant="32" id="U5e-Ep-AXb"/>
                             <constraint firstItem="vnJ-ab-2DN" firstAttribute="leading" secondItem="09n-uq-BZa" secondAttribute="leading" id="jdT-Yx-jLV"/>
-                            <constraint firstAttribute="bottom" secondItem="VDK-3p-Az4" secondAttribute="bottom" id="qPA-MQ-PI7"/>
+                            <constraint firstItem="p1d-C9-ScM" firstAttribute="top" secondItem="vnJ-ab-2DN" secondAttribute="bottom" constant="16" id="yYP-R1-Xhe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="09n-uq-BZa"/>
                     </view>
