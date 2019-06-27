@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 import SDWebImage
 
 class EditProfileVC: UIViewController {
@@ -27,7 +28,6 @@ class EditProfileVC: UIViewController {
     var addButton: MiddleButton = {
         let btn = MiddleButton()
         btn.setImage(UIImage(named: "check"), for: .normal)
-        btn.addTarget(self, action: #selector(addButtonTapped), for: .touchUpInside)
         return btn
     }()
     var user: User?
@@ -45,6 +45,7 @@ class EditProfileVC: UIViewController {
     
     func configure() {
         view.addSubview(addButton)
+        addButton.addTarget(self, action: #selector(addButtonTapped), for: .touchUpInside)
         nameTextField.text = user?.username
         emailTextField.text = user?.email
         guard let profileImageURL = user?.profileImageURL else {return}
@@ -56,7 +57,45 @@ class EditProfileVC: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func addPhotoButtonTapped() {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = true
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            imagePicker.sourceType = .photoLibrary
+            present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
     @objc func addButtonTapped() {
-        print("tapped")
+        guard let user = user else {return}
+        guard let username = nameTextField.text else {return}
+        user.username = username.isEmpty ? "(no username)" : username
+        guard let imageData = addPhotoButton.backgroundImage(for: .normal)?.jpegData(compressionQuality: 0.3) else {return}
+        Storage.saveProfileImage(data: imageData) { urlString in
+            user.profileImageURL = urlString
+            Firestore.saveUser(user: user, completion: {[unowned self] (success) in
+                if !success {
+                    print("Error")
+                }
+                NotificationCenter.default.post(name: NSNotification.Name(kUSER_SAVED_NOTIFICATION), object: nil)
+                self.dismiss(animated: true, completion: nil)
+            })
+        }
+    }
+}
+
+extension EditProfileVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            
+            addPhotoButton.setBackgroundImage(image, for: .normal)
+        }
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
     }
 }

@@ -38,6 +38,7 @@ class MenuController: UIViewController {
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(handleUserSavedNotification), name: NSNotification.Name(kUSER_SAVED_NOTIFICATION), object: nil)  
         fetchUser()
     }
     
@@ -84,5 +85,11 @@ class MenuController: UIViewController {
         }
         
     }
+    
+    //MARK: - Selectors
+    @objc func handleUserSavedNotification() {
+        fetchUser()
+    }
+
 
 }
