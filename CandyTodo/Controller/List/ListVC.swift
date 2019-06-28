@@ -9,24 +9,60 @@
 import UIKit
 import Firebase
 
-class ListVC: UIViewController {
+private let reuseIdentifier = "datacell"
+
+class ListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    //MARK: - Outlets
+    @IBOutlet weak var tableView: UITableView!
     
+    //MARK: - vars
+    var tasks = [Task]()
     
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.register(TaskCell.self, forCellReuseIdentifier: reuseIdentifier)
+        tableView.rowHeight = 56
+        
+        fetchTasks()
     }
 
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-    }
-
-    
     //MARK: - Actions
     @IBAction func menuButtonTapped() {
         NotificationCenter.default.post(name: Notification.Name(kMENU_BUTTON_TAPPED), object: nil)
     }
     
-
+    //MARK: - TableView
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tasks.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? TaskCell {
+            let task = tasks[indexPath.row]
+            cell.task = task
+            cell.configure()
+            return cell
+        }
+        
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+    }
+    
+    //MARK: - helpers
+    func fetchTasks() {
+        guard let userId = Auth.auth().currentUser?.uid else {return}
+        Firestore.fetchTasks(userId: userId) {[unowned self] (tasks, error) in
+            if let error = error {
+                print("Error", error)
+                return
+            }            
+            self.tasks = tasks.filter({Calendar(identifier: .gregorian).isDateInToday($0.dueDate)})
+            self.tableView.reloadData()
+        }
+    }
 }

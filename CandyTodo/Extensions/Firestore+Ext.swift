@@ -79,4 +79,20 @@ extension Firestore {
             completion(true)
         }
     }
+    
+    // Fetch tasks
+    static func fetchTasks(userId: String, completion: @escaping([Task], Error?) -> Void) {
+        let tasksRef = Firestore.firestore().collection("users").document(userId).collection("tasks")
+        tasksRef.getDocuments { (snapshot, error) in
+            if let error = error {
+                print("Error fetching tasks:", error)
+                completion([], error)
+                return
+            }
+            guard let documents = snapshot?.documents else {return}
+            var taskArray = documents.map({$0.data()}).map({Task(from: $0)})
+            taskArray.sort(by: {$0.dueDate < $1.dueDate})
+            completion(taskArray, nil)
+        }
+    }
 }

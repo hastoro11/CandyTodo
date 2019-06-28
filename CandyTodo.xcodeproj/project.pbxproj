@@ -24,6 +24,7 @@
 		8C2A884022C3EF3A00873486 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2A883F22C3EF3A00873486 /* User.swift */; };
 		8C2A884222C4F7DF00873486 /* Storage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2A884122C4F7DF00873486 /* Storage+Ext.swift */; };
 		8C2A884422C52A3D00873486 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2A884322C52A3D00873486 /* Task.swift */; };
+		8C2A884622C532AF00873486 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2A884522C532AF00873486 /* TaskCell.swift */; };
 		8CEAA74622C22ECC00BF2445 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8CEAA74522C22ECC00BF2445 /* GoogleService-Info.plist */; };
 		8CEAA74922C2A88300BF2445 /* Firestore+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEAA74822C2A88300BF2445 /* Firestore+Ext.swift */; };
 		8CEAA74B22C2C98300BF2445 /* NoBorderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEAA74A22C2C98300BF2445 /* NoBorderTextField.swift */; };
@@ -79,6 +80,7 @@
 		8C2A883F22C3EF3A00873486 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8C2A884122C4F7DF00873486 /* Storage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storage+Ext.swift"; sourceTree = "<group>"; };
 		8C2A884322C52A3D00873486 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		8C2A884522C532AF00873486 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		8CEAA74522C22ECC00BF2445 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8CEAA74822C2A88300BF2445 /* Firestore+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firestore+Ext.swift"; sourceTree = "<group>"; };
 		8CEAA74A22C2C98300BF2445 /* NoBorderTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoBorderTextField.swift; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				8C28D1D6229ECF600042D1C5 /* HeaderView.swift */,
+				8C2A884522C532AF00873486 /* TaskCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -567,6 +570,7 @@
 				8C28D202229FAE9B0042D1C5 /* NewTaskVC.swift in Sources */,
 				8C2A884222C4F7DF00873486 /* Storage+Ext.swift in Sources */,
 				8C28D1FE229F1E2A0042D1C5 /* ProfileVC.swift in Sources */,
+				8C2A884622C532AF00873486 /* TaskCell.swift in Sources */,
 				8C28D1D7229ECF600042D1C5 /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
