@@ -42,29 +42,8 @@ class SchedulerVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView()
-        let headerLabel = UILabel()
-        headerLabel.translatesAutoresizingMaskIntoConstraints = false
-        headerLabel.font = UIFont(name: "Avenir-Book", size: 14)
-        headerLabel.textColor = kBASEBLUE_COLOR.withAlphaComponent(0.5)
-        headerView.addSubview(headerLabel)
-        headerLabel.topAnchor.constraint(equalTo: headerView.topAnchor).isActive = true
-        headerLabel.leftAnchor.constraint(equalTo: headerView.leftAnchor, constant: 32).isActive = true
-        headerLabel.rightAnchor.constraint(equalTo: headerView.rightAnchor).isActive = true
-        headerLabel.bottomAnchor.constraint(equalTo: headerView.bottomAnchor).isActive = true
-        let formatter = DateFormatter()
-        formatter.calendar = Calendar(identifier: .gregorian)
-        formatter.dateStyle = .full
-        let date = dates[section]
-        if Calendar(identifier: .gregorian).isDateInToday(date) {
-            headerLabel.text = "Today"
-        } else if Calendar(identifier: .gregorian).isDateInTomorrow(date) {
-            headerLabel.text = "Tomorrow"
-        } else if Calendar(identifier: .gregorian).isDateInYesterday(date) {
-            headerLabel.text = "Yesterday"
-        } else {
-            headerLabel.text = formatter.string(from: dates[section])
-        }
+        let headerView = SectionHeaderView()
+        headerView.date = dates[section]
         return headerView
     }
     
