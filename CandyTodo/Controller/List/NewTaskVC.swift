@@ -93,6 +93,7 @@ class NewTaskVC: UIViewController {
             if !success {
                 print("Error")
             }
+            NotificationCenter.default.post(name: NSNotification.Name(kTASK_SAVED_NOTIFICATION), object: nil)
             self.dismiss(animated: true, completion: nil)
         }
     }

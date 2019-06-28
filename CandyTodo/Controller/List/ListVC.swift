@@ -24,7 +24,7 @@ class ListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         super.viewDidLoad()
         tableView.register(TaskCell.self, forCellReuseIdentifier: reuseIdentifier)
         tableView.rowHeight = 56
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(fetchTasks), name: NSNotification.Name(kTASK_SAVED_NOTIFICATION), object: nil)
         fetchTasks()
     }
 
@@ -54,13 +54,13 @@ class ListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     //MARK: - helpers
-    func fetchTasks() {
+    @objc func fetchTasks() {
         guard let userId = Auth.auth().currentUser?.uid else {return}
         Firestore.fetchTasks(userId: userId) {[unowned self] (tasks, error) in
             if let error = error {
                 print("Error", error)
                 return
-            }            
+            }
             self.tasks = tasks.filter({Calendar(identifier: .gregorian).isDateInToday($0.dueDate)})
             self.tableView.reloadData()
         }

@@ -14,3 +14,4 @@ let kBASEBLUE_COLOR = UIColor(red: 36/255, green: 59/255, blue: 107/255, alpha: 
 let kMENU_BUTTON_TAPPED = "MenuButtonTapped"
 let kMENU_ITEM_BUTTON_TAPPED = "MenuItemButtonTapped"
 let kUSER_SAVED_NOTIFICATION = "UserSaved"
+let kTASK_SAVED_NOTIFICATION = "TaskSaved"

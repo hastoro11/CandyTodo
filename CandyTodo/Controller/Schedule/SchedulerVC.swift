@@ -26,6 +26,7 @@ class SchedulerVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         super.viewDidLoad()
         tableView.rowHeight = 56
         tableView.register(TaskCell.self, forCellReuseIdentifier: reuseIdentifier)
+        NotificationCenter.default.addObserver(self, selector: #selector(fetchTasks), name: NSNotification.Name(kTASK_SAVED_NOTIFICATION), object: nil)
         fetchTasks()
     }
     
@@ -61,7 +62,7 @@ class SchedulerVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     }
     
     //MARK: - helpers
-    func fetchTasks() {
+    @objc func fetchTasks() {
         guard let userId = Auth.auth().currentUser?.uid else {return}
         Firestore.fetchTasks(userId: userId) {[unowned self] (tasks, error) in
             if let error = error {
