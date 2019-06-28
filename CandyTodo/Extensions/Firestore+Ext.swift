@@ -95,4 +95,36 @@ extension Firestore {
             completion(taskArray, nil)
         }
     }
+    
+    // Set completed on task
+    static func setComplete(userId: String, task: Task, completion: @escaping(Bool) -> Void) {
+        let taskRef = Firestore.firestore()
+            .collection("users")
+            .document(userId)
+            .collection("tasks")
+            .document(task.uid)
+        taskRef.setData(task.createDictionary()) { (error) in
+            if let _ = error {
+                completion(false)
+                return
+            }
+            completion(true)
+        }
+    }
+    
+    // Delete task
+    static func deleteTask(userId: String, task: Task, completion: @escaping (Bool) -> Void) {
+        let taskRef = Firestore.firestore()
+            .collection("users")
+            .document(userId)
+            .collection("tasks")
+            .document(task.uid)
+        taskRef.delete { (error) in
+            if let _ = error {
+                completion(false)
+                return
+            }
+            completion(true)
+        }
+    }
 }

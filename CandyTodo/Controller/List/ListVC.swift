@@ -25,6 +25,7 @@ class ListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         tableView.register(TaskCell.self, forCellReuseIdentifier: reuseIdentifier)
         tableView.rowHeight = 56
         NotificationCenter.default.addObserver(self, selector: #selector(fetchTasks), name: NSNotification.Name(kTASK_SAVED_NOTIFICATION), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(fetchTasks), name: NSNotification.Name(kTODAYS_TASK_MODIFIED_IN_SCHEDULER_NOTIFICATION), object: nil)
         fetchTasks()
     }
 
@@ -53,7 +54,45 @@ class ListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: false)
     }
     
-    //MARK: - helpers
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let task = tasks[indexPath.row]
+        let completeModifyAction = UIContextualAction(style: .normal, title: task.completed ? "✕" : "✓") {(action, view, success) in
+            guard let userId = Auth.auth().currentUser?.uid else {return}
+            
+            task.completed = !task.completed
+            Firestore.setComplete(userId: userId, task: task, completion: { (ok) in
+                if !ok {
+                    print("Error in setting complete")
+                }
+                success(true)
+                tableView.reloadRows(at: [indexPath], with: .automatic)                
+                NotificationCenter.default.post(name: NSNotification.Name(kTODAYS_TASK_MODIFIED_IN_SCHEDULER_NOTIFICATION), object: nil)
+            })
+        }
+        completeModifyAction.backgroundColor = #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)
+        
+        return UISwipeActionsConfiguration(actions: [completeModifyAction])
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, view, success) in
+            guard let userId = Auth.auth().currentUser?.uid else {return}
+            let task = self.tasks[indexPath.row]
+            Firestore.deleteTask(userId: userId, task: task, completion: {[unowned self] (ok) in
+                if !ok {
+                    print("Error deleting task")
+                }
+                success(true)
+                self.tasks.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .automatic)
+                NotificationCenter.default.post(name: NSNotification.Name(kTODAYS_TASK_MODIFIED_IN_SCHEDULER_NOTIFICATION), object: nil)
+            })
+        }
+        
+        return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
+    
+    //MARK: - helpers, selectors
     @objc func fetchTasks() {
         guard let userId = Auth.auth().currentUser?.uid else {return}
         Firestore.fetchTasks(userId: userId) {[unowned self] (tasks, error) in
@@ -65,4 +104,5 @@ class ListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             self.tableView.reloadData()
         }
     }
+    
 }
