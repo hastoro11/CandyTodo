@@ -104,7 +104,8 @@ extension Firestore {
             .collection("tasks")
             .document(task.uid)
         taskRef.setData(task.createDictionary()) { (error) in
-            if let _ = error {
+            if let error = error {
+                print("Error seting complete task:", error)
                 completion(false)
                 return
             }
@@ -120,7 +121,25 @@ extension Firestore {
             .collection("tasks")
             .document(task.uid)
         taskRef.delete { (error) in
-            if let _ = error {
+            if let error = error {
+                print("Error deleting task:", error)
+                completion(false)
+                return
+            }
+            completion(true)
+        }
+    }
+    
+    // Update task
+    static func updateTask(userId: String, task: Task, completion: @escaping (Bool) -> Void) {
+        let taskRef = Firestore.firestore()
+            .collection("users")
+            .document(userId)
+            .collection("tasks")
+            .document(task.uid)
+        taskRef.setData(task.createDictionary()) { (error) in
+            if let error = error {
+                print("Error updating task:", error)
                 completion(false)
                 return
             }

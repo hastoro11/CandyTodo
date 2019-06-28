@@ -83,9 +83,10 @@ class SchedulerVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let task = sortedTasks[indexPath.section][indexPath.row]
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, view, success) in
             guard let userId = Auth.auth().currentUser?.uid else {return}
-            let task = self.sortedTasks[indexPath.section][indexPath.row]
+            
             Firestore.deleteTask(userId: userId, task: task, completion: {[unowned self] (ok) in
                 if !ok {
                     print("Error deleting task")
@@ -96,8 +97,13 @@ class SchedulerVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
                 NotificationCenter.default.post(name: NSNotification.Name(kTODAYS_TASK_MODIFIED_IN_SCHEDULER_NOTIFICATION), object: nil)
             })
         }
-        
-        return UISwipeActionsConfiguration(actions: [deleteAction])
+        let editAction = UIContextualAction(style: .normal, title: "Edit") {[unowned self] (action, view, success) in
+            guard let editTaskVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewTaskVC") as? NewTaskVC else {return}
+            editTaskVC.task = task
+            self.present(editTaskVC, animated: true, completion: nil)
+        }
+        editAction.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+        return UISwipeActionsConfiguration(actions: [deleteAction, editAction])
     }
     
     //MARK: - helpers

@@ -1173,6 +1173,7 @@
                         <outlet property="dateTextField" destination="hmL-8r-TKs" id="m3F-uR-EYS"/>
                         <outlet property="priorityTextField" destination="bz7-y6-Bb6" id="f66-7U-aCU"/>
                         <outlet property="taskTextField" destination="9d1-I0-aUf" id="ej4-LH-TXX"/>
+                        <outlet property="titleLabel" destination="bLc-8S-wep" id="gmE-Rf-n7f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vkt-GB-hVl" userLabel="First Responder" sceneMemberID="firstResponder"/>

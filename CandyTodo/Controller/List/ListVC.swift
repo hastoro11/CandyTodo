@@ -65,7 +65,7 @@ class ListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                     print("Error in setting complete")
                 }
                 success(true)
-                tableView.reloadRows(at: [indexPath], with: .automatic)                
+                tableView.reloadRows(at: [indexPath], with: .automatic)
                 NotificationCenter.default.post(name: NSNotification.Name(kTODAYS_TASK_MODIFIED_IN_SCHEDULER_NOTIFICATION), object: nil)
             })
         }
@@ -75,9 +75,10 @@ class ListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let task = self.tasks[indexPath.row]
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, view, success) in
             guard let userId = Auth.auth().currentUser?.uid else {return}
-            let task = self.tasks[indexPath.row]
+            
             Firestore.deleteTask(userId: userId, task: task, completion: {[unowned self] (ok) in
                 if !ok {
                     print("Error deleting task")
@@ -88,8 +89,14 @@ class ListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                 NotificationCenter.default.post(name: NSNotification.Name(kTODAYS_TASK_MODIFIED_IN_SCHEDULER_NOTIFICATION), object: nil)
             })
         }
+        let editAction = UIContextualAction(style: .normal, title: "Edit") {[unowned self] (action, view, success) in
+            guard let editTaskVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewTaskVC") as? NewTaskVC else {return}
+            editTaskVC.task = task
+            self.present(editTaskVC, animated: true, completion: nil)
+        }
+        editAction.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
         
-        return UISwipeActionsConfiguration(actions: [deleteAction])
+        return UISwipeActionsConfiguration(actions: [deleteAction, editAction])
     }
     
     //MARK: - helpers, selectors

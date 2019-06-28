@@ -15,6 +15,7 @@ class NewTaskVC: UIViewController {
     @IBOutlet weak var taskTextField: UITextField!
     @IBOutlet weak var dateTextField: UITextField!
     @IBOutlet weak var priorityTextField: UITextField!
+    @IBOutlet weak var titleLabel: UILabel!
     
     //MARK: - vars
     var addButton: MiddleButton = {
@@ -27,13 +28,23 @@ class NewTaskVC: UIViewController {
     var priorityPicker = UIPickerView()
     var priorities = ["Low", "Medium", "High"]
     var selectedDate = Date()
-    var selectedPriority = ""
+    var selectedPriority = "Low"
     var enteredTask = ""
+    var task: Task?
 
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
+        if let task = task {
+            setDateTextField(with: task.dueDate)
+            selectedDate = task.dueDate
+            priorityTextField.text = task.priority
+            selectedPriority = task.priority
+            enteredTask = task.title
+            taskTextField.text = task.title
+            titleLabel.text = "EDIT TASK"
+        }
     }
     
     func configure() {
@@ -89,12 +100,23 @@ class NewTaskVC: UIViewController {
             return
         }
         let taskDictionary = ["title": enteredTask, "priority": selectedPriority, "dueDate": selectedDate.timeIntervalSince1970] as [String: Any]
-        Firestore.saveTask(userId: userId, task: Task.init(from: taskDictionary)) {[unowned self] (success) in
-            if !success {
-                print("Error")
+        if let task = task {
+            let updatedTask = Task(from: taskDictionary)
+            updatedTask.uid = task.uid
+            Firestore.updateTask(userId: userId, task: updatedTask) { (success) in
+                if success {
+                    NotificationCenter.default.post(name: NSNotification.Name(kTASK_SAVED_NOTIFICATION), object: nil)
+                    self.dismiss(animated: true, completion: nil)
+                }
             }
-            NotificationCenter.default.post(name: NSNotification.Name(kTASK_SAVED_NOTIFICATION), object: nil)
-            self.dismiss(animated: true, completion: nil)
+        } else {
+            Firestore.saveTask(userId: userId, task: Task.init(from: taskDictionary)) {[unowned self] (success) in
+                if !success {
+                    print("Error")
+                }
+                NotificationCenter.default.post(name: NSNotification.Name(kTASK_SAVED_NOTIFICATION), object: nil)
+                self.dismiss(animated: true, completion: nil)
+            }
         }
     }
     
