@@ -35,7 +35,7 @@ class RegisterViewController: UIViewController {
             let linkRange = (attributedText.string as NSString).range(of: "Terms & Policies")
             
             attributedText.addAttributes([
-                NSAttributedString.Key.link : "http://index.hu"
+                NSAttributedString.Key.link : "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"
                 ], range: linkRange)
             
             termsAndConditionsTextView.linkTextAttributes = [
