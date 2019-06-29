@@ -255,7 +255,7 @@
                                     <action selector="loginButtonTapped" destination="OT4-EP-8LU" eventType="touchUpInside" id="kAQ-Ep-m36"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="By registering, you automatically accept the Terms &amp; Policies of candy app." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Tmt-fR-a20">
+                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="By registering, you automatically accept the Terms &amp; Policies of candy app." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Tmt-fR-a20">
                                 <rect key="frame" x="95" y="555.5" width="224" height="48"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
