@@ -20,6 +20,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FirebaseConfiguration.shared.setLoggerLevel(.min)
         FirebaseApp.configure()
+        if let _ = UserDefaults.standard.object(forKey: kSUMMARY_MESSAGES) as? Bool {
+            // already set
+            print("summary", UserDefaults.standard.object(forKey: kSUMMARY_MESSAGES) as! Bool)
+        } else {
+            UserDefaults.standard.set(true, forKey: kSUMMARY_MESSAGES)
+        }
+        if let _ = UserDefaults.standard.object(forKey: kNOTIFICATION_MESSAGES) as? Bool {
+            // already set
+            print("notification", UserDefaults.standard.object(forKey: kNOTIFICATION_MESSAGES) as! Bool)
+        } else {
+            UserDefaults.standard.set(true, forKey: kNOTIFICATION_MESSAGES)
+        }
         if Auth.auth().currentUser != nil {
             window?.rootViewController = MainViewController()
         } else {

@@ -798,6 +798,9 @@
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6eP-fU-XI0">
                                         <rect key="frame" x="301" y="0.0" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="notificationSwitchChanged:" destination="CHA-FH-fv5" eventType="valueChanged" id="onP-SM-FCa"/>
+                                        </connections>
                                     </switch>
                                 </subviews>
                             </stackView>
@@ -812,6 +815,9 @@
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q0X-Sg-1cf">
                                         <rect key="frame" x="301" y="0.0" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="summaryMessages:" destination="CHA-FH-fv5" eventType="valueChanged" id="qaB-xR-kv1"/>
+                                        </connections>
                                     </switch>
                                 </subviews>
                             </stackView>
@@ -835,7 +841,9 @@
                     </view>
                     <connections>
                         <outlet property="emailLabel" destination="ing-Lz-XAG" id="u2p-HN-fK9"/>
+                        <outlet property="notificationSwitch" destination="6eP-fU-XI0" id="zXY-Vc-SvY"/>
                         <outlet property="profileImageView" destination="xZ5-lf-n04" id="dsh-3b-gVy"/>
+                        <outlet property="summarySwitch" destination="Q0X-Sg-1cf" id="ksq-OQ-XBP"/>
                         <outlet property="usernameLabel" destination="JRt-fk-3sd" id="fCk-iR-jFM"/>
                     </connections>
                 </viewController>

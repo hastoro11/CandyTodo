@@ -31,6 +31,8 @@ class ProfileVC: UIViewController {
             emailLabel.text = ""
         }
     }
+    @IBOutlet weak var notificationSwitch: UISwitch!
+    @IBOutlet weak var summarySwitch: UISwitch!
     
     //MARK: - vars
     var user: User? {
@@ -42,7 +44,9 @@ class ProfileVC: UIViewController {
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: #selector(handleUserSavedNotification), name: NSNotification.Name(kUSER_SAVED_NOTIFICATION), object: nil)        
+        NotificationCenter.default.addObserver(self, selector: #selector(handleUserSavedNotification), name: NSNotification.Name(kUSER_SAVED_NOTIFICATION), object: nil)
+        summarySwitch.setOn(UserDefaults.standard.bool(forKey: kSUMMARY_MESSAGES), animated: false)
+        notificationSwitch.setOn(UserDefaults.standard.bool(forKey: kNOTIFICATION_MESSAGES), animated: false)
         fetchUser()
     }
     
@@ -58,12 +62,21 @@ class ProfileVC: UIViewController {
         NotificationCenter.default.post(name: Notification.Name(kMENU_BUTTON_TAPPED), object: nil)
     }
     
+    @IBAction func notificationSwitchChanged(_ sender: UISwitch) {
+        UserDefaults.standard.set(sender.isOn, forKey: kNOTIFICATION_MESSAGES)
+    }
+    
+    @IBAction func summaryMessages(_ sender: UISwitch) {
+        UserDefaults.standard.set(sender.isOn, forKey: kSUMMARY_MESSAGES)
+    }
+    
     //MARK: - helpers
     func configure() {
         usernameLabel.text = user?.username
         emailLabel.text = user?.email
         guard let profileImageURL = user?.profileImageURL else {return}
         profileImageView.sd_setImage(with: URL(string: profileImageURL), placeholderImage: UIImage(named: "avatar"), options: [SDWebImageOptions.continueInBackground, .progressiveLoad], context: nil)
+        
     }
     
     func fetchUser() {
