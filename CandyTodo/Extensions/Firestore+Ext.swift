@@ -14,6 +14,7 @@ extension Firestore {
     static func registerNewUser(email: String, password: String, completion: @escaping (Bool, Error?) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
             if let error = error {
+                print("Error registering:", error)
                 completion(false, error)
                 return
             }
@@ -56,7 +57,11 @@ extension Firestore {
     // Save user
     static func saveUser(user: User, completion: @escaping(Bool) -> Void) {
         let userRef = Firestore.firestore().collection("users").document(user.uid)
-        userRef.setData(user.createDictionary()) { (error) in
+        userRef.updateData([
+            "profileImageURL": user.profileImageURL,
+            "uid": user.uid,
+            "username": user.username
+        ]) { (error) in
             if let error = error {
                 print("Error updating user:", error)
                 completion(false)
@@ -64,6 +69,7 @@ extension Firestore {
             }
             completion(true)
         }
+        
     }
     
     // Save task
@@ -144,6 +150,51 @@ extension Firestore {
                 return
             }
             completion(true)
+        }
+    }
+    
+    // Fetch tasks for notification
+    static func fetchTodaysInCompletedTasks(completion: @escaping(Int, Error?) -> Void) {
+        guard let userId = Auth.auth().currentUser?.uid else {return}
+        let tasksRef = Firestore.firestore().collection("users").document(userId).collection("tasks")
+        DispatchQueue.global().sync {
+            
+            tasksRef
+                .whereField("completed", isEqualTo: false)
+                .getDocuments { (snapshot, error) in
+                    if let error = error {
+                        print("Error fetching tasks for summary:", error)
+                        completion(0, error)
+                        return
+                    }
+                    guard let documents = snapshot?.documents else {return}
+                    let taskArray = documents.map({$0.data()}).map({Task(from: $0)}).filter({Calendar.current.isDateInToday($0.dueDate)})
+                    completion(taskArray.count, nil)
+            }
+        }
+    }
+    
+    static func fetchTasksForToday(completion: @escaping (Int, Error?) -> Void) {
+        guard let userId = Auth.auth().currentUser?.uid else {return}
+        let tasksRef = Firestore.firestore().collection("users").document(userId).collection("tasks")
+        DispatchQueue.global().sync {
+            tasksRef
+                .getDocuments { (snapshot, error) in
+                    if let error = error {
+                        print("Error fetching tasks for reminder:", error)
+                        completion(0, error)
+                        return
+                    }
+                    guard let documents = snapshot?.documents else {return}
+                    var taskArray = documents.map({$0.data()}).map({Task(from: $0)})
+                    
+                    if Date() < Calendar.current.startOfDay(for: Date()).addingTimeInterval(60 * 60 * 8) {
+                        taskArray = taskArray.filter({Calendar.current.isDateInToday($0.dueDate)})
+                    } else {
+                        taskArray = taskArray.filter({Calendar.current.isDateInTomorrow($0.dueDate)})
+                    }
+                    completion(taskArray.count, nil)
+            }
         }
     }
 }

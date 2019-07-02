@@ -27,7 +27,7 @@ class MainViewController: UITabBarController {
         configureTabBarController()
         configureSideMenu()
     }
-    
+
     //MARK: - Configure
     func configureTabBarController() {
         // Tabbar setup

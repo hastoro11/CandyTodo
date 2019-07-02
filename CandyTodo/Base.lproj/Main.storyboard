@@ -641,6 +641,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XLm-Qs-cVm">
                                 <rect key="frame" x="0.0" y="220" width="414" height="676"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="gFd-Ve-fkw" id="GTC-Of-CVa"/>
+                                    <outlet property="delegate" destination="gFd-Ve-fkw" id="Aic-oA-nrJ"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -655,6 +659,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Jfv-1p-LrA"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="XLm-Qs-cVm" id="gwx-wz-i1m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gvc-q1-JbS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

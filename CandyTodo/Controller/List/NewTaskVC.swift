@@ -66,6 +66,7 @@ class NewTaskVC: UIViewController {
         priorityPicker.dataSource = self
         //PriorityTextField
         priorityTextField.delegate = self
+        priorityTextField.text = "Low"
         priorityTextField.inputView = priorityPicker
         //GestureRecognizer
         let tapRecognizer = UITapGestureRecognizer()
