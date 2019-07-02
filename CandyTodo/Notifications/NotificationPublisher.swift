@@ -31,7 +31,7 @@ class NotificationPublisher: NSObject {
         
         // Next day
         let notificationContentNextDay = UNMutableNotificationContent()
-        notificationContentNextDay.title = "You might have missed a few tasks!"
+        notificationContentNextDay.title = "Summary"
         notificationContentNextDay.body = "You did not check out your todo list today!"
         notificationContentNextDay.badge = NSNumber(value: UIApplication.shared.applicationIconBadgeNumber + 1)
         notificationContentNextDay.sound = .default
@@ -56,6 +56,9 @@ class NotificationPublisher: NSObject {
         notificationContent.badge = NSNumber(value: UIApplication.shared.applicationIconBadgeNumber + 1)
         notificationContent.sound = .default
         var dateOfReminder = Calendar.current.startOfDay(for: Date()).addingTimeInterval(60 * 60 * 8)
+        if Date() >= Calendar.current.startOfDay(for: Date()).addingTimeInterval(60 * 60 * 8) {
+            dateOfReminder = dateOfReminder.addingTimeInterval(60 * 60 * 24)
+        }
         let dateOfReminderDateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: dateOfReminder)
         
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateOfReminderDateComponents, repeats: false)
@@ -70,10 +73,12 @@ class NotificationPublisher: NSObject {
         
         // Next day
         let notificationContentNextDay = UNMutableNotificationContent()
-        notificationContentNextDay.title = "You might have missed a few tasks!"
-        notificationContentNextDay.body = "You did not check out your todo list today!"
+        notificationContentNextDay.title = "Reminder"
+        notificationContentNextDay.body = "You might have som tasks on your list today!"
         notificationContentNextDay.badge = NSNumber(value: UIApplication.shared.applicationIconBadgeNumber + 1)
         notificationContentNextDay.sound = .default
+        
+        
         
         guard let dateOfNextReminder = Calendar.current.date(byAdding: .hour, value: 24, to: dateOfReminder) else {return}
         

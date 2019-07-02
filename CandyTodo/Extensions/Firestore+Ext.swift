@@ -14,6 +14,7 @@ extension Firestore {
     static func registerNewUser(email: String, password: String, completion: @escaping (Bool, Error?) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
             if let error = error {
+                print("Error registering:", error)
                 completion(false, error)
                 return
             }
@@ -56,7 +57,11 @@ extension Firestore {
     // Save user
     static func saveUser(user: User, completion: @escaping(Bool) -> Void) {
         let userRef = Firestore.firestore().collection("users").document(user.uid)
-        userRef.setData(user.createDictionary()) { (error) in
+        userRef.updateData([
+            "profileImageURL": user.profileImageURL,
+            "uid": user.uid,
+            "username": user.username
+        ]) { (error) in
             if let error = error {
                 print("Error updating user:", error)
                 completion(false)
@@ -64,6 +69,7 @@ extension Firestore {
             }
             completion(true)
         }
+        
     }
     
     // Save task

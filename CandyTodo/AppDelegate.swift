@@ -61,22 +61,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
-        Firestore.fetchTodaysInCompletedTasks { (count, error) in
-            if let error = error {
-                print("Error getting today's tasks:", error.localizedDescription)
-                return
+        if UserDefaults.standard.bool(forKey: kSUMMARY_MESSAGES) {
+            Firestore.fetchTodaysInCompletedTasks { (count, error) in
+                if let error = error {
+                    print("Error getting today's tasks:", error.localizedDescription)
+                    return
+                }
+                NotificationPublisher.sendSummaryNotification(body: "Today you left \(count) incompleted tasks.")
             }
-            NotificationPublisher.sendSummaryNotification(body: "Today you left \(count) incompleted tasks.")
         }
-        Firestore.fetchTasksForToday { (count, error) in
-            if let error = error {
-                print("Error getting today's tasks:", error.localizedDescription)
-                return
+        if UserDefaults.standard.bool(forKey: kNOTIFICATION_MESSAGES) {
+            Firestore.fetchTasksForToday { (count, error) in
+                if let error = error {
+                    print("Error getting today's tasks:", error.localizedDescription)
+                    return
+                }
+                NotificationPublisher.sendReminderNotification(body: "Today you have \(count) item on your list")
             }
-            NotificationPublisher.sendReminderNotification(body: "Today you have \(count) item on your list")
         }
-        print("here")
-        print("here")
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
