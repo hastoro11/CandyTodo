@@ -146,4 +146,49 @@ extension Firestore {
             completion(true)
         }
     }
+    
+    // Fetch tasks for notification
+    static func fetchTodaysInCompletedTasks(completion: @escaping(Int, Error?) -> Void) {
+        guard let userId = Auth.auth().currentUser?.uid else {return}
+        let tasksRef = Firestore.firestore().collection("users").document(userId).collection("tasks")
+        DispatchQueue.global().sync {
+            
+            tasksRef
+                .whereField("completed", isEqualTo: false)
+                .getDocuments { (snapshot, error) in
+                    if let error = error {
+                        print("Error fetching tasks for summary:", error)
+                        completion(0, error)
+                        return
+                    }
+                    guard let documents = snapshot?.documents else {return}
+                    let taskArray = documents.map({$0.data()}).map({Task(from: $0)}).filter({Calendar.current.isDateInToday($0.dueDate)})
+                    completion(taskArray.count, nil)
+            }
+        }
+    }
+    
+    static func fetchTasksForToday(completion: @escaping (Int, Error?) -> Void) {
+        guard let userId = Auth.auth().currentUser?.uid else {return}
+        let tasksRef = Firestore.firestore().collection("users").document(userId).collection("tasks")
+        DispatchQueue.global().sync {
+            tasksRef
+                .getDocuments { (snapshot, error) in
+                    if let error = error {
+                        print("Error fetching tasks for reminder:", error)
+                        completion(0, error)
+                        return
+                    }
+                    guard let documents = snapshot?.documents else {return}
+                    var taskArray = documents.map({$0.data()}).map({Task(from: $0)})
+                    
+                    if Date() < Calendar.current.startOfDay(for: Date()).addingTimeInterval(60 * 60 * 8) {
+                        taskArray = taskArray.filter({Calendar.current.isDateInToday($0.dueDate)})
+                    } else {
+                        taskArray = taskArray.filter({Calendar.current.isDateInTomorrow($0.dueDate)})
+                    }
+                    completion(taskArray.count, nil)
+            }
+        }
+    }
 }

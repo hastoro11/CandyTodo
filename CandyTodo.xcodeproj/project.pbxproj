@@ -26,6 +26,7 @@
 		8C2A884422C52A3D00873486 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2A884322C52A3D00873486 /* Task.swift */; };
 		8C2A884622C532AF00873486 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2A884522C532AF00873486 /* TaskCell.swift */; };
 		8C2A884822C5F2D200873486 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2A884722C5F2D200873486 /* SectionHeaderView.swift */; };
+		8C2A884B22C8809C00873486 /* NotificationPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2A884A22C8809C00873486 /* NotificationPublisher.swift */; };
 		8CEAA74622C22ECC00BF2445 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8CEAA74522C22ECC00BF2445 /* GoogleService-Info.plist */; };
 		8CEAA74922C2A88300BF2445 /* Firestore+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEAA74822C2A88300BF2445 /* Firestore+Ext.swift */; };
 		8CEAA74B22C2C98300BF2445 /* NoBorderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEAA74A22C2C98300BF2445 /* NoBorderTextField.swift */; };
@@ -83,6 +84,7 @@
 		8C2A884322C52A3D00873486 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		8C2A884522C532AF00873486 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		8C2A884722C5F2D200873486 /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
+		8C2A884A22C8809C00873486 /* NotificationPublisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationPublisher.swift; sourceTree = "<group>"; };
 		8CEAA74522C22ECC00BF2445 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8CEAA74822C2A88300BF2445 /* Firestore+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firestore+Ext.swift"; sourceTree = "<group>"; };
 		8CEAA74A22C2C98300BF2445 /* NoBorderTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoBorderTextField.swift; sourceTree = "<group>"; };
@@ -188,6 +190,14 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		8C2A884922C8807600873486 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				8C2A884A22C8809C00873486 /* NotificationPublisher.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
 		8CEAA74722C2A86C00BF2445 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +232,7 @@
 		8CF5E8AE228A8D98007BF40A /* CandyTodo */ = {
 			isa = PBXGroup;
 			children = (
+				8C2A884922C8807600873486 /* Notifications */,
 				8CEAA74722C2A86C00BF2445 /* Extensions */,
 				8CF5E8E6228A9964007BF40A /* Components */,
 				8CF5E8E1228A8E3F007BF40A /* Config */,
@@ -555,6 +566,7 @@
 				8CEAA74922C2A88300BF2445 /* Firestore+Ext.swift in Sources */,
 				8C28D20822A03FD70042D1C5 /* EditProfileVC.swift in Sources */,
 				8C28D204229FB06E0042D1C5 /* TaskTextField.swift in Sources */,
+				8C2A884B22C8809C00873486 /* NotificationPublisher.swift in Sources */,
 				8C28D1D3229EB7B40042D1C5 /* ListVC.swift in Sources */,
 				8C2A884422C52A3D00873486 /* Task.swift in Sources */,
 				8CEAA77122C3906F00BF2445 /* MenuController.swift in Sources */,
