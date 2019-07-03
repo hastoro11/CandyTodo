@@ -97,7 +97,8 @@ class NewTaskVC: UIViewController {
         taskTextField.endEditing(true)
         guard let userId = Auth.auth().currentUser?.uid else {return}
         if enteredTask.isEmpty || selectedPriority.isEmpty {
-            print("Error: Invalid")
+            let error = NSError(domain: "", code: 1, userInfo: [NSLocalizedDescriptionKey : "Please enter valid info into the fields!"])
+            error.alert(with: self)
             return
         }
         let taskDictionary = ["title": enteredTask, "priority": selectedPriority, "dueDate": selectedDate.timeIntervalSince1970] as [String: Any]
@@ -113,7 +114,9 @@ class NewTaskVC: UIViewController {
         } else {
             Firestore.saveTask(userId: userId, task: Task.init(from: taskDictionary)) {[unowned self] (success) in
                 if !success {
-                    print("Error")
+                    let error = NSError(domain: "", code: 1, userInfo: [NSLocalizedDescriptionKey : "Internal server error, please try later."])
+                    error.alert(with: self)
+                    return
                 }
                 NotificationCenter.default.post(name: NSNotification.Name(kTASK_SAVED_NOTIFICATION), object: nil)
                 self.dismiss(animated: true, completion: nil)

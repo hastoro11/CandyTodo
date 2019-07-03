@@ -39,8 +39,8 @@ class LoginViewController: UIViewController {
         guard let email = emailTextField.text, !email.isEmpty else {return}
         guard let password = passwordTextField.text, !password.isEmpty else {return}
         Firestore.login(with: email, password: password) {[unowned self] (success, error) in
-            if let error = error {
-                print("Error in loging in:", error)
+            if let error = error {                
+                error.alert(with: self)
                 return
             }
             if success {

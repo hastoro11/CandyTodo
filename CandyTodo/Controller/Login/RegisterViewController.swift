@@ -64,11 +64,12 @@ class RegisterViewController: UIViewController {
         
         Firestore.registerNewUser(email: email, password: password) {[unowned self] (success, error) in
             if let error = error {
-                print("Error in registering:", error)
+                error.alert(with: self)
                 return
             }
             if !success {
-                print("Error in registering")
+                let error = NSError(domain: "", code: 1, userInfo: [NSLocalizedDescriptionKey : "Internal server error, please try later."])
+                error.alert(with: self)
                 return
             }
             

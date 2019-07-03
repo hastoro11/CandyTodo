@@ -58,7 +58,7 @@ class MenuController: UIViewController {
     func fetchUser() {
         Firestore.getCurrentUser {[unowned self] (user, error) in
             if let error = error {
-                print("Error fetching user:", error)
+                error.alert(with: self)
                 return
             }
             self.user = user
@@ -75,7 +75,7 @@ class MenuController: UIViewController {
                     view.window?.rootViewController = UINavigationController(rootViewController: loginViewController)
                 }
             } catch {
-                print("Error signing out:", error.localizedDescription)
+                error.alert(with: self)
             }
             
         } else {

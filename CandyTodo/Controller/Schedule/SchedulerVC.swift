@@ -70,7 +70,9 @@ class SchedulerVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
             task.completed = !task.completed
             Firestore.setComplete(userId: userId, task: task, completion: { (ok) in
                 if !ok {
-                    print("Error in setting complete")
+                    let error = NSError(domain: "", code: 1, userInfo: [NSLocalizedDescriptionKey : "Internal server error, please try later."])
+                    error.alert(with: self)
+                    return
                 }
                 success(true)
                 tableView.reloadRows(at: [indexPath], with: .automatic)
@@ -89,7 +91,9 @@ class SchedulerVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
             
             Firestore.deleteTask(userId: userId, task: task, completion: {[unowned self] (ok) in
                 if !ok {
-                    print("Error deleting task")
+                    let error = NSError(domain: "", code: 1, userInfo: [NSLocalizedDescriptionKey : "Internal server error, please try later."])
+                    error.alert(with: self)
+                    return
                 }
                 success(true)
                 self.sortedTasks[indexPath.section].remove(at: indexPath.row)
@@ -111,7 +115,7 @@ class SchedulerVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         guard let userId = Auth.auth().currentUser?.uid else {return}
         Firestore.fetchTasks(userId: userId) {[unowned self] (tasks, error) in
             if let error = error {
-                print("Error fetching tasks:", error)
+                error.alert(with: self)
                 return
             }
             self.tasks = tasks

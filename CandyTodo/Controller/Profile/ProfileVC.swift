@@ -82,7 +82,7 @@ class ProfileVC: UIViewController {
     func fetchUser() {
         Firestore.getCurrentUser {[unowned self] (user, error) in
             if let error = error {
-                print("Error fetching user:", error)
+                error.alert(with: self)
                 return
             }
             self.user = user

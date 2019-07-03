@@ -76,7 +76,9 @@ class EditProfileVC: UIViewController {
             user.profileImageURL = urlString
             Firestore.saveUser(user: user, completion: {[unowned self] (success) in
                 if !success {
-                    print("Error")
+                    let error = NSError(domain: "", code: 1, userInfo: [NSLocalizedDescriptionKey : "Internal server error, please try later."])
+                    error.alert(with: self)
+                    return
                 }
                 NotificationCenter.default.post(name: NSNotification.Name(kUSER_SAVED_NOTIFICATION), object: nil)
                 self.dismiss(animated: true, completion: nil)
