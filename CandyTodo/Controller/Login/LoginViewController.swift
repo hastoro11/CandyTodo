@@ -16,6 +16,7 @@ class LoginViewController: UIViewController {
         didSet {
             let attributedTitle = NSAttributedString(string: "Forgot?", attributes: [NSAttributedString.Key.underlineStyle : NSUnderlineStyle.single.rawValue, NSAttributedString.Key.foregroundColor: UIColor.lightGray])
             forgotButton.setAttributedTitle(attributedTitle, for: .normal)
+            forgotButton.contentHorizontalAlignment = .right
         }
     }
     @IBOutlet weak var registerButton: UIButton! {
