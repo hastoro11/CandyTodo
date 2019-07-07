@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: - outlets
     @IBOutlet weak var forgotButton: UIButton! {
@@ -25,8 +25,16 @@ class LoginViewController: UIViewController {
             registerButton.setAttributedTitle(attributedTitle, for: .normal)
         }
     }
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField! {
+        didSet {
+            emailTextField.delegate = self
+        }
+    }
+    @IBOutlet weak var passwordTextField: UITextField! {
+        didSet {
+            passwordTextField.delegate = self
+        }
+    }
 
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -48,5 +56,11 @@ class LoginViewController: UIViewController {
                 self.view.window?.rootViewController = MainViewController()
             }
         }
+    }
+    
+    //MARK: - TextField delegate
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
