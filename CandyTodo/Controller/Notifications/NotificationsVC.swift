@@ -32,6 +32,9 @@ class NotificationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     //MARK: - TableView datasource, delegate
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if notifications.count == 0 {
+            return 1
+        }
         return notifications.count
     }
     
@@ -43,7 +46,9 @@ class NotificationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
             return cell
         }
         
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "emptyCell", for: indexPath)
+        cell.textLabel?.attributedText = NSAttributedString(string: "You've read all of the notifications", attributes: [NSAttributedString.Key.font : UIFont(name: "Avenir-Book", size: 14) ?? UIFont.systemFont(ofSize: 14), NSAttributedString.Key.foregroundColor: kBASEBLUE_COLOR])
+        return cell
     }
     
     //MARK: - helpers
