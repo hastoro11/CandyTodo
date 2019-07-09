@@ -10,16 +10,20 @@ import UIKit
 import Firebase
 import SDWebImage
 
-class EditProfileVC: UIViewController {
+class EditProfileVC: UIViewController, UITextFieldDelegate {
     
     //MARK: - Outlets
-    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var nameTextField: UITextField! {
+        didSet {
+            nameTextField.delegate = self
+        }
+    }
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var addPhotoButton: UIButton! {
         didSet {
             addPhotoButton.layer.borderWidth = 3
             addPhotoButton.layer.borderColor = kBASEBLUE_COLOR.cgColor
-            addPhotoButton.layer.cornerRadius = 90
+            addPhotoButton.layer.cornerRadius = 80
             addPhotoButton.layer.masksToBounds = true
         }
     }
@@ -84,6 +88,12 @@ class EditProfileVC: UIViewController {
                 self.dismiss(animated: true, completion: nil)
             })
         }
+    }
+    
+    //MARK: - Textfield delegate
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
 
