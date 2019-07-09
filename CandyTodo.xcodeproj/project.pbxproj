@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21D1283122D50C55002E57F5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21D1283022D50C55002E57F5 /* GoogleService-Info.plist */; };
 		2E3CA63D748F51AC44C7E96B /* Pods_CandyTodo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C89AE36143D302CE59A6F2E /* Pods_CandyTodo.framework */; };
 		52A571D4333F40000BC81AF8 /* Pods_CandyTodoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C98CD8AF141E07F208EDCC6F /* Pods_CandyTodoTests.framework */; };
 		8C235931228B0C9D00DE4C7C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C235930228B0C9D00DE4C7C /* RegisterViewController.swift */; };
@@ -29,7 +30,6 @@
 		8C2A884B22C8809C00873486 /* NotificationPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2A884A22C8809C00873486 /* NotificationPublisher.swift */; };
 		8C9CBF5122CB5E420076E288 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CBF5022CB5E420076E288 /* NotificationCell.swift */; };
 		8C9CBF5322CCE2C00076E288 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CBF5222CCE2C00076E288 /* Error.swift */; };
-		8CEAA74622C22ECC00BF2445 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8CEAA74522C22ECC00BF2445 /* GoogleService-Info.plist */; };
 		8CEAA74922C2A88300BF2445 /* Firestore+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEAA74822C2A88300BF2445 /* Firestore+Ext.swift */; };
 		8CEAA74B22C2C98300BF2445 /* NoBorderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEAA74A22C2C98300BF2445 /* NoBorderTextField.swift */; };
 		8CEAA77122C3906F00BF2445 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEAA77022C3906F00BF2445 /* MenuController.swift */; };
@@ -65,6 +65,7 @@
 /* Begin PBXFileReference section */
 		1A902ACE9539F2EE8A307812 /* Pods-CandyTodo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CandyTodo.release.xcconfig"; path = "Target Support Files/Pods-CandyTodo/Pods-CandyTodo.release.xcconfig"; sourceTree = "<group>"; };
 		1D2A39B7F223C132D65C2470 /* Pods_CandyTodoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CandyTodoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		21D1283022D50C55002E57F5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		228C66C520CD921D95829739 /* Pods-CandyTodo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CandyTodo.debug.xcconfig"; path = "Target Support Files/Pods-CandyTodo/Pods-CandyTodo.debug.xcconfig"; sourceTree = "<group>"; };
 		39C8ABE9EB0608116971154D /* Pods-CandyTodoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CandyTodoTests.debug.xcconfig"; path = "Target Support Files/Pods-CandyTodoTests/Pods-CandyTodoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		469B49DD9D8039BBCD573DCC /* Pods-CandyTodoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CandyTodoTests.release.xcconfig"; path = "Target Support Files/Pods-CandyTodoTests/Pods-CandyTodoTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -90,7 +91,6 @@
 		8C9CBF5022CB5E420076E288 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
 		8C9CBF5222CCE2C00076E288 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		8CDBDF8C22CDDF91008DF3D3 /* CandyTodo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CandyTodo.entitlements; sourceTree = "<group>"; };
-		8CEAA74522C22ECC00BF2445 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8CEAA74822C2A88300BF2445 /* Firestore+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firestore+Ext.swift"; sourceTree = "<group>"; };
 		8CEAA74A22C2C98300BF2445 /* NoBorderTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoBorderTextField.swift; sourceTree = "<group>"; };
 		8CEAA77022C3906F00BF2445 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
@@ -250,7 +250,7 @@
 				8CF5E8B3228A8D99007BF40A /* Main.storyboard */,
 				8CF5E8B6228A8D9A007BF40A /* Assets.xcassets */,
 				8CF5E8B8228A8D9A007BF40A /* LaunchScreen.storyboard */,
-				8CEAA74522C22ECC00BF2445 /* GoogleService-Info.plist */,
+				21D1283022D50C55002E57F5 /* GoogleService-Info.plist */,
 				8CF5E8BB228A8D9A007BF40A /* Info.plist */,
 			);
 			path = CandyTodo;
@@ -466,9 +466,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CF5E8BA228A8D9A007BF40A /* LaunchScreen.storyboard in Resources */,
+				21D1283122D50C55002E57F5 /* GoogleService-Info.plist in Resources */,
 				8CF5E8B7228A8D9A007BF40A /* Assets.xcassets in Resources */,
 				8CF5E8B5228A8D99007BF40A /* Main.storyboard in Resources */,
-				8CEAA74622C22ECC00BF2445 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
