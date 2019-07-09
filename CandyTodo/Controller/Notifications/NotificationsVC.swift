@@ -47,14 +47,8 @@ class NotificationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
             cell.title = notification.request.content.body
             return cell
         }
-<<<<<<< HEAD
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "emptyCell", for: indexPath)
-        cell.textLabel?.attributedText = NSAttributedString(string: "You've read all of the notifications", attributes: [NSAttributedString.Key.font : UIFont(name: "Avenir-Book", size: 14) ?? UIFont.systemFont(ofSize: 14), NSAttributedString.Key.foregroundColor: kBASEBLUE_COLOR])
-=======
         let cell = tableView.dequeueReusableCell(withIdentifier: "emptyCell", for: indexPath)
         cell.textLabel?.attributedText = NSAttributedString(string: "You've already read all of the notifications", attributes: [NSAttributedString.Key.font : UIFont(name: "Avenir-Book", size: 14) ?? UIFont.systemFont(ofSize: 14), NSAttributedString.Key.foregroundColor: kBASEBLUE_COLOR])        
->>>>>>> editprofile_vc
         return cell
     }
     
