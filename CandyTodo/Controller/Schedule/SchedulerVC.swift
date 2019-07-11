@@ -44,8 +44,8 @@ class SchedulerVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = SectionHeaderView()
-        headerView.date = dates[section]
+        weak var headerView = SectionHeaderView()
+        headerView?.date = dates[section]
         return headerView
     }
     
