@@ -27,10 +27,6 @@ class ListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(fetchTasks), name: NSNotification.Name(kTASK_SAVED_NOTIFICATION), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(fetchTasks), name: NSNotification.Name(kTODAYS_TASK_MODIFIED_IN_SCHEDULER_NOTIFICATION), object: nil)
         fetchTasks()
-        
-        //
-        let components = Calendar.current.dateComponents([.year, .month, .day], from: Date())
-        print(components)
     }
 
     //MARK: - Actions

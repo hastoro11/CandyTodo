@@ -19,6 +19,8 @@ class NotificationPublisher: NSObject {
         let dateOfSummary = Calendar.current.startOfDay(for: Date()).addingTimeInterval(60 * 60 * 24 - 60)
         let dateOfSummaryDateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: dateOfSummary)
         
+//        let premDateComponents = DateComponents(year: 2019, month: 7, day: 11, hour: 8, minute: 14, second: 30)
+        
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateOfSummaryDateComponents, repeats: false)
 
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: notificationContent, trigger: trigger)
@@ -60,6 +62,8 @@ class NotificationPublisher: NSObject {
             dateOfReminder = dateOfReminder.addingTimeInterval(60 * 60 * 24)
         }
         let dateOfReminderDateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: dateOfReminder)
+        
+//        let premDateComponents = DateComponents(year: 2019, month: 7, day: 11, hour: 8, minute: 16, second: 30)
         
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateOfReminderDateComponents, repeats: false)
         

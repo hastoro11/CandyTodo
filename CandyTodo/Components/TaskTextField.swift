@@ -11,8 +11,7 @@ import UIKit
 class TaskTextField: UITextField {
 
     override init(frame: CGRect) {
-        super.init(frame: frame)
-        print("init 2")
+        super.init(frame: frame)        
     }
     
     required init?(coder aDecoder: NSCoder) {
